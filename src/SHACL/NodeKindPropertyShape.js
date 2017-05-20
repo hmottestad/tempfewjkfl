@@ -20,11 +20,11 @@ class NodeKindPropertyShape extends MinMaxCountPropertyShape {
         if (jsonld[this.path] !== undefined) {
             for (let object of jsonld[this.path]) {
                 if (this.nodeKind === Shacl.Literal && object["@value"] === undefined) {
-                    failureCallback(new ValidationError(this, "meesage"))
+                    failureCallback(new ValidationError(this, "meesage", jsonld))
                 } else if (this.nodeKind === Shacl.BlankNodeOrIRI && object["@id"] === undefined) {
-                    failureCallback(new ValidationError(this, "meesage"))
+                    failureCallback(new ValidationError(this, "meesage", jsonld))
                 } else if (this.nodeKind === Shacl.IRI && (object["@id"] === undefined || object["@id"].indexOf("_:") === 0)) {
-                    failureCallback(new ValidationError(this, "meesage"))
+                    failureCallback(new ValidationError(this, "meesage", jsonld))
                 }
             }
         }

@@ -1,0 +1,652 @@
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+var _jsxFileName = 'src/Fullscreen.js';
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactDropzone = require('react-dropzone');
+
+var _reactDropzone2 = _interopRequireDefault(_reactDropzone);
+
+var _dcatApNoShacl = require('./dcat-ap-no-shacl.js');
+
+var _dcatApNoShacl2 = _interopRequireDefault(_dcatApNoShacl);
+
+var _Shacl = require('./SHACL/Shacl.js');
+
+var _Shacl2 = _interopRequireDefault(_Shacl);
+
+var _RdfToJsonLD = require('./RdfToJsonLD.js');
+
+var _RdfToJsonLD2 = _interopRequireDefault(_RdfToJsonLD);
+
+var _ValidationError = require('./SHACL/ValidationError.js');
+
+var _ValidationError2 = _interopRequireDefault(_ValidationError);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Fullscreen = function (_React$Component) {
+    _inherits(Fullscreen, _React$Component);
+
+    function Fullscreen() {
+        _classCallCheck(this, Fullscreen);
+
+        var _this = _possibleConstructorReturn(this, (Fullscreen.__proto__ || Object.getPrototypeOf(Fullscreen)).call(this));
+
+        _this.state = {
+            accept: '',
+            files: [],
+            dropzoneActive: false,
+            shacl: null,
+            validationErrors: []
+        };
+
+        _this.validate = _this.validate.bind(_this);
+        return _this;
+    }
+
+    _createClass(Fullscreen, [{
+        key: 'componentWillMount',
+        value: function componentWillMount() {
+
+            var that = this;
+            _dcatApNoShacl2.default.asJsonLd().then(function (shacl) {
+                that.setState({ shacl: new _Shacl2.default(shacl) });
+            }).catch(function (err) {
+                console.log(err);
+            });
+        }
+    }, {
+        key: 'onDragEnter',
+        value: function onDragEnter() {
+            this.setState({
+                dropzoneActive: true
+            });
+        }
+    }, {
+        key: 'onDragLeave',
+        value: function onDragLeave() {
+            this.setState({
+                dropzoneActive: false
+            });
+        }
+    }, {
+        key: 'onDrop',
+        value: function onDrop(files) {
+
+            this.setState({
+                files: files,
+                dropzoneActive: false,
+                validationErrors: []
+            });
+
+            this.validate(files[0]);
+        }
+    }, {
+        key: 'validate',
+        value: function validate(file) {
+            console.log(file);
+
+            var reader = new FileReader();
+
+            reader.onload = function (e) {
+                var _this2 = this;
+
+                var text = reader.result;
+
+                if (file.name.indexOf(".json") > 0 || file.name.indexOf(".jsonld") > 0) {
+                    console.log("JSONLD");
+                } else {
+                    //assume turtle
+
+
+                    _RdfToJsonLD2.default.rdfToJsonld(text).then(function (jsonld) {
+                        _this2.state.shacl.validate(jsonld, function (error) {
+                            var validationErrors = _this2.state.validationErrors;
+                            validationErrors.push(error);
+                            _this2.setState({ validationErrors: validationErrors });
+                        });
+                    }).catch(function (error) {
+                        console.error(error);
+                        _this2.setState({ syntaxError: ":(" });
+                    });
+                }
+            };
+
+            reader.onload = reader.onload.bind(this);
+
+            reader.readAsText(file);
+        }
+    }, {
+        key: 'applyMimeTypes',
+        value: function applyMimeTypes(event) {
+            this.setState({
+                accept: event.target.value
+            });
+        }
+    }, {
+        key: 'render',
+        value: function render() {
+            var _this3 = this;
+
+            var _state = this.state,
+                accept = _state.accept,
+                files = _state.files,
+                dropzoneActive = _state.dropzoneActive;
+
+            var overlayStyle = {
+                position: 'absolute',
+                top: 12,
+                right: 0,
+                bottom: 0,
+                left: 12,
+                height: 268,
+                padding: '2.5em 0',
+                background: 'rgba(0,0,0,0.5)',
+                textAlign: 'center',
+                color: '#fff',
+                marginRight: 12
+            };
+
+            console.log(this.state);
+
+            if (!this.state.shacl) {
+                return _react2.default.createElement(
+                    'h4',
+                    {
+                        __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 124
+                        },
+                        __self: this
+                    },
+                    'Laster'
+                );
+            }
+
+            var forMangeFiler = files.length > 1;
+
+            var gyldig = files.length === 1 && this.state.validationErrors.filter(function (error) {
+                return _Shacl2.default.Violation == error.severity;
+            }).length === 0;
+            var ikkeGyldig = files.length === 1 && this.state.validationErrors.filter(function (error) {
+                return _Shacl2.default.Violation == error.severity;
+            }).length > 0;
+
+            var groupedValidationWarnings = {};
+            this.state.validationErrors.filter(function (error) {
+                return _Shacl2.default.Warning == error.severity;
+            }).forEach(function (error) {
+
+                if (!groupedValidationWarnings[error.jsonld["@id"]]) {
+                    groupedValidationWarnings[error.jsonld["@id"]] = { "@type": error.targetClass };
+                }
+                if (!groupedValidationWarnings[error.jsonld["@id"]][error.path]) {
+                    groupedValidationWarnings[error.jsonld["@id"]][error.path] = [];
+                }
+                groupedValidationWarnings[error.jsonld["@id"]][error.path].push(error);
+            });
+
+            var groupedValidationViolations = {};
+            this.state.validationErrors.filter(function (error) {
+                return _Shacl2.default.Violation == error.severity;
+            }).forEach(function (error) {
+
+                if (!error.jsonld) {
+                    console.error(error);
+                    //return;
+                }
+
+                if (!groupedValidationViolations[error.jsonld["@id"]]) {
+                    groupedValidationViolations[error.jsonld["@id"]] = { "@type": error.targetClass };
+                }
+                if (!groupedValidationViolations[error.jsonld["@id"]][error.path]) {
+                    groupedValidationViolations[error.jsonld["@id"]][error.path] = [];
+                }
+                groupedValidationViolations[error.jsonld["@id"]][error.path].push(error);
+            });
+
+            return _react2.default.createElement(
+                'div',
+                { style: { marginTop: -10, padding: 10, marginRight: -15, marginLeft: -15, minHeight: 300 }, __source: {
+                        fileName: _jsxFileName,
+                        lineNumber: 168
+                    },
+                    __self: this
+                },
+                _react2.default.createElement(
+                    'div',
+                    {
+                        __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 171
+                        },
+                        __self: this
+                    },
+                    _react2.default.createElement(
+                        _reactDropzone2.default,
+                        {
+                            disableClick: true,
+                            style: { border: "dashed" },
+                            accept: accept,
+                            onDrop: this.onDrop.bind(this),
+                            onDragEnter: this.onDragEnter.bind(this),
+                            onDragLeave: this.onDragLeave.bind(this),
+                            __source: {
+                                fileName: _jsxFileName,
+                                lineNumber: 172
+                            },
+                            __self: this
+                        },
+                        dropzoneActive && _react2.default.createElement(
+                            'div',
+                            { style: overlayStyle, __source: {
+                                    fileName: _jsxFileName,
+                                    lineNumber: 180
+                                },
+                                __self: this
+                            },
+                            'Slipp'
+                        ),
+                        _react2.default.createElement(
+                            'div',
+                            { style: { height: 240, width: "100%" }, __source: {
+                                    fileName: _jsxFileName,
+                                    lineNumber: 181
+                                },
+                                __self: this
+                            },
+                            _react2.default.createElement(
+                                'h3',
+                                { style: { textAlign: "center", paddingTop: 90 }, __source: {
+                                        fileName: _jsxFileName,
+                                        lineNumber: 183
+                                    },
+                                    __self: this
+                                },
+                                'Slipp en DCAT fil her'
+                            ),
+                            forMangeFiler && _react2.default.createElement(
+                                'h4',
+                                { style: { textAlign: "center" }, __source: {
+                                        fileName: _jsxFileName,
+                                        lineNumber: 184
+                                    },
+                                    __self: this
+                                },
+                                'For mange filer!'
+                            ),
+                            gyldig && _react2.default.createElement(
+                                'h4',
+                                { style: { textAlign: "center" }, className: 'green', __source: {
+                                        fileName: _jsxFileName,
+                                        lineNumber: 185
+                                    },
+                                    __self: this
+                                },
+                                _react2.default.createElement(
+                                    'span',
+                                    { className: 'lighter-black', __source: {
+                                            fileName: _jsxFileName,
+                                            lineNumber: 185
+                                        },
+                                        __self: this
+                                    },
+                                    '"',
+                                    this.state.files[0].name,
+                                    '"'
+                                ),
+                                ' er gyldig ',
+                                _react2.default.createElement(
+                                    'span',
+                                    {
+                                        __source: {
+                                            fileName: _jsxFileName,
+                                            lineNumber: 185
+                                        },
+                                        __self: this
+                                    },
+                                    '\u2713'
+                                )
+                            ),
+                            ikkeGyldig && _react2.default.createElement(
+                                'h4',
+                                { style: { textAlign: "center" }, className: 'red', __source: {
+                                        fileName: _jsxFileName,
+                                        lineNumber: 186
+                                    },
+                                    __self: this
+                                },
+                                _react2.default.createElement(
+                                    'span',
+                                    { className: 'lighter-black', __source: {
+                                            fileName: _jsxFileName,
+                                            lineNumber: 186
+                                        },
+                                        __self: this
+                                    },
+                                    '"',
+                                    this.state.files[0].name,
+                                    '"'
+                                ),
+                                ' er ikke gyldig ',
+                                _react2.default.createElement(
+                                    'span',
+                                    {
+                                        __source: {
+                                            fileName: _jsxFileName,
+                                            lineNumber: 186
+                                        },
+                                        __self: this
+                                    },
+                                    '\u2717'
+                                )
+                            ),
+                            this.state.syntaxError && _react2.default.createElement(
+                                'h4',
+                                { style: { textAlign: "center" }, className: 'red', __source: {
+                                        fileName: _jsxFileName,
+                                        lineNumber: 187
+                                    },
+                                    __self: this
+                                },
+                                _react2.default.createElement(
+                                    'span',
+                                    { className: 'lighter-black', __source: {
+                                            fileName: _jsxFileName,
+                                            lineNumber: 187
+                                        },
+                                        __self: this
+                                    },
+                                    '"',
+                                    this.state.files[0].name,
+                                    '"'
+                                ),
+                                ' har syntax feil ',
+                                _react2.default.createElement(
+                                    'span',
+                                    {
+                                        __source: {
+                                            fileName: _jsxFileName,
+                                            lineNumber: 187
+                                        },
+                                        __self: this
+                                    },
+                                    '\u2717'
+                                )
+                            )
+                        )
+                    )
+                ),
+                _react2.default.createElement(
+                    'div',
+                    {
+                        __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 192
+                        },
+                        __self: this
+                    },
+                    _react2.default.createElement(
+                        'h2',
+                        {
+                            __source: {
+                                fileName: _jsxFileName,
+                                lineNumber: 193
+                            },
+                            __self: this
+                        },
+                        _react2.default.createElement(
+                            'a',
+                            { className: 'link', href: '#_Avvik', id: '_Avvik', __source: {
+                                    fileName: _jsxFileName,
+                                    lineNumber: 193
+                                },
+                                __self: this
+                            },
+                            'Avvik'
+                        )
+                    ),
+                    Object.keys(groupedValidationViolations).map(function (id) {
+                        return _react2.default.createElement(RenderError, { id: id, group: groupedValidationViolations, __source: {
+                                fileName: _jsxFileName,
+                                lineNumber: 195
+                            },
+                            __self: _this3
+                        });
+                    }),
+                    this.state.validationErrors.filter(function (error) {
+                        return _Shacl2.default.Violation == error.severity;
+                    }).length == 0 && _react2.default.createElement(
+                        'p',
+                        {
+                            __source: {
+                                fileName: _jsxFileName,
+                                lineNumber: 197
+                            },
+                            __self: this
+                        },
+                        'Ingen avvik'
+                    )
+                ),
+                _react2.default.createElement(
+                    'div',
+                    {
+                        __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 200
+                        },
+                        __self: this
+                    },
+                    _react2.default.createElement(
+                        'h2',
+                        {
+                            __source: {
+                                fileName: _jsxFileName,
+                                lineNumber: 201
+                            },
+                            __self: this
+                        },
+                        _react2.default.createElement(
+                            'a',
+                            { className: 'link', href: '#_Anbefalinger', id: '_Anbefalinger', __source: {
+                                    fileName: _jsxFileName,
+                                    lineNumber: 201
+                                },
+                                __self: this
+                            },
+                            'Anbefalinger'
+                        )
+                    ),
+                    Object.keys(groupedValidationWarnings).map(function (id) {
+                        return _react2.default.createElement(RenderError, { id: id, group: groupedValidationWarnings, __source: {
+                                fileName: _jsxFileName,
+                                lineNumber: 203
+                            },
+                            __self: _this3
+                        });
+                    }),
+                    this.state.validationErrors.filter(function (error) {
+                        return _Shacl2.default.Warning == error.severity;
+                    }).length == 0 && _react2.default.createElement(
+                        'p',
+                        {
+                            __source: {
+                                fileName: _jsxFileName,
+                                lineNumber: 205
+                            },
+                            __self: this
+                        },
+                        'Ingenting \xE5 forbedre'
+                    )
+                )
+            );
+        }
+    }]);
+
+    return Fullscreen;
+}(_react2.default.Component);
+
+var RenderError = function (_React$Component2) {
+    _inherits(RenderError, _React$Component2);
+
+    function RenderError() {
+        _classCallCheck(this, RenderError);
+
+        return _possibleConstructorReturn(this, (RenderError.__proto__ || Object.getPrototypeOf(RenderError)).apply(this, arguments));
+    }
+
+    _createClass(RenderError, [{
+        key: 'render',
+        value: function render() {
+            var _this5 = this;
+
+            var id = this.props.id;
+            var group = this.props.group;
+
+            return _react2.default.createElement(
+                'span',
+                {
+                    __source: {
+                        fileName: _jsxFileName,
+                        lineNumber: 226
+                    },
+                    __self: this
+                },
+                _react2.default.createElement(
+                    'h4',
+                    {
+                        __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 227
+                        },
+                        __self: this
+                    },
+                    'Ressurs ',
+                    _react2.default.createElement(
+                        'span',
+                        { style: { color: "darkgreen" }, __source: {
+                                fileName: _jsxFileName,
+                                lineNumber: 227
+                            },
+                            __self: this
+                        },
+                        id
+                    )
+                ),
+                _react2.default.createElement(
+                    'h6',
+                    {
+                        __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 228
+                        },
+                        __self: this
+                    },
+                    'Type: ',
+                    _react2.default.createElement(
+                        'span',
+                        { style: { color: "darkgreen" }, __source: {
+                                fileName: _jsxFileName,
+                                lineNumber: 228
+                            },
+                            __self: this
+                        },
+                        _ValidationError2.default.prefix(group[id]["@type"])
+                    )
+                ),
+                _react2.default.createElement(
+                    'ul',
+                    {
+                        __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 229
+                        },
+                        __self: this
+                    },
+                    Object.keys(group[id]).filter(function (predikat) {
+                        return !predikat.indexOf("@") == 0;
+                    }).map(function (predikat) {
+                        return _react2.default.createElement(
+                            'li',
+                            { style: { listStyle: "none" }, __source: {
+                                    fileName: _jsxFileName,
+                                    lineNumber: 233
+                                },
+                                __self: _this5
+                            },
+                            _react2.default.createElement(
+                                'div',
+                                {
+                                    __source: {
+                                        fileName: _jsxFileName,
+                                        lineNumber: 234
+                                    },
+                                    __self: _this5
+                                },
+                                _react2.default.createElement(
+                                    'h7',
+                                    { style: { color: "darkgreen" }, __source: {
+                                            fileName: _jsxFileName,
+                                            lineNumber: 235
+                                        },
+                                        __self: _this5
+                                    },
+                                    _ValidationError2.default.prefix(predikat)
+                                ),
+                                _react2.default.createElement(
+                                    'ul',
+                                    {
+                                        __source: {
+                                            fileName: _jsxFileName,
+                                            lineNumber: 237
+                                        },
+                                        __self: _this5
+                                    },
+                                    Object.values(group[id][predikat]).map(function (error) {
+                                        return _react2.default.createElement(
+                                            'li',
+                                            { style: { listStyle: "none" }, __source: {
+                                                    fileName: _jsxFileName,
+                                                    lineNumber: 239
+                                                },
+                                                __self: _this5
+                                            },
+                                            error.message
+                                        );
+                                    })
+                                )
+                            )
+                        );
+                    })
+                ),
+                _react2.default.createElement('hr', {
+                    __source: {
+                        fileName: _jsxFileName,
+                        lineNumber: 248
+                    },
+                    __self: this
+                })
+            );
+        }
+    }]);
+
+    return RenderError;
+}(_react2.default.Component);
+
+exports.default = Fullscreen;
+//# sourceMappingURL=Fullscreen.js.map

@@ -3,6 +3,7 @@ import NodeKindPropertyShape from "./NodeKindPropertyShape.js";
 import DatatypePropertyShape from "./DatatypePropertyShape.js";
 import ClassPropertyShape from "./ClassPropertyShape.js";
 import OrPropertyShape from "./OrPropertyShape.js";
+import InPropertyShape from "./InPropertyShape.js";
 
 import Shacl from "./Shacl.js";
 
@@ -30,6 +31,10 @@ class PropertyShape {
         }
 
 
+        if (jsonld[Shacl.in] !== undefined) {
+            return new InPropertyShape(jsonld, shape);
+        }
+
         if (jsonld[Shacl.minCount] !== undefined) {
             return new MinMaxCountPropertyShape(jsonld, shape);
         }
@@ -37,6 +42,9 @@ class PropertyShape {
         if (jsonld[Shacl.maxCount] !== undefined) {
             return new MinMaxCountPropertyShape(jsonld, shape);
         }
+
+
+        throw "Unknown shape";
 
 
     }

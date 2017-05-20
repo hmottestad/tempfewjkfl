@@ -3,13 +3,13 @@ import PropertyShape from "./PropertyShape.js";
 
 class Shape {
 
-    scopeClass = null;
+    targetClass = null;
     property = [];
 
 
     constructor(jsonld) {
-        if (jsonld[Shacl.scopeClass] !== undefined) {
-            this.scopeClass = jsonld[Shacl.scopeClass][0]["@id"];
+        if (jsonld[Shacl.targetClass] !== undefined) {
+            this.targetClass = jsonld[Shacl.targetClass][0]["@id"];
         }
 
         if (jsonld[Shacl.property] !== undefined) {

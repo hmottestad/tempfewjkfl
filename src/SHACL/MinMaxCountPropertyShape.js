@@ -29,12 +29,16 @@ class MinMaxCountPropertyShape extends PathPropertyShape {
             length = jsonld[this.path].length;
         }
 
-        if (this.maxCount !== null && length > this.maxCount) {
-            failureCallback(new ValidationError(this, `Expected maximum ${this.maxCount} but found ${length}`));
-        }
+        if (this.maxCount && this.minCount && this.minCount == this.minCount && (length < this.minCount || length > this.maxCount)) {
+            failureCallback(new ValidationError(this, `Forventet nøyaktig ${this.minCount} forekomst men fant ${length}`, jsonld));
+        } else {
+            if (this.maxCount && length > this.maxCount) {
+                failureCallback(new ValidationError(this, `Forventet maks ${this.maxCount} forekomst men fant ${length}`, jsonld));
+            }
 
-        if (this.minCount !== null && length < this.minCount) {
-            failureCallback(new ValidationError(this, `Expected minimum ${this.minCount} but found only ${length}`));
+            if (this.minCount  && length < this.minCount) {
+                failureCallback(new ValidationError(this, `Forventet minst ${this.minCount} forekomst men fant ${length}`, jsonld));
+            }
         }
 
 

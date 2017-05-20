@@ -1,7 +1,7 @@
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
-    value: true
+  value: true
 });
 var _jsxFileName = 'src/App.js';
 
@@ -11,17 +11,9 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
-var _dcatApNoShacl = require('./dcat-ap-no-shacl.js');
+var _Fullscreen = require('./Fullscreen.js');
 
-var _dcatApNoShacl2 = _interopRequireDefault(_dcatApNoShacl);
-
-var _example = require('./example.js');
-
-var _example2 = _interopRequireDefault(_example);
-
-var _Shacl = require('./SHACL/Shacl.js');
-
-var _Shacl2 = _interopRequireDefault(_Shacl);
+var _Fullscreen2 = _interopRequireDefault(_Fullscreen);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -34,47 +26,39 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 
 var App = function (_Component) {
-    _inherits(App, _Component);
+  _inherits(App, _Component);
 
-    function App() {
-        _classCallCheck(this, App);
+  function App() {
+    _classCallCheck(this, App);
 
-        return _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).apply(this, arguments));
+    return _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).apply(this, arguments));
+  }
+
+  _createClass(App, [{
+    key: 'render',
+    value: function render() {
+
+      return _react2.default.createElement(
+        'div',
+        {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 13
+          },
+          __self: this
+        },
+        _react2.default.createElement(_Fullscreen2.default, {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 14
+          },
+          __self: this
+        })
+      );
     }
+  }]);
 
-    _createClass(App, [{
-        key: 'render',
-        value: function render() {
-
-            var shacl = new _Shacl2.default(_dcatApNoShacl2.default.dcatNoShacl);
-
-            shacl.validate(_example2.default.example, function (failure) {
-                if (failure.severity === _Shacl2.default.Violation) {
-                    console.log(failure);
-                }
-            });
-
-            return _react2.default.createElement(
-                'div',
-                {
-                    __source: {
-                        fileName: _jsxFileName,
-                        lineNumber: 21
-                    },
-                    __self: this
-                },
-                _react2.default.createElement('pre', {
-                    __source: {
-                        fileName: _jsxFileName,
-                        lineNumber: 22
-                    },
-                    __self: this
-                })
-            );
-        }
-    }]);
-
-    return App;
+  return App;
 }(_react.Component);
 
 exports.default = App;

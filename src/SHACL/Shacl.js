@@ -9,13 +9,15 @@ class Shacl {
     static Shape = Shacl.ns + "Shape";
     static minCount = Shacl.ns + "minCount";
     static maxCount = Shacl.ns + "maxCount";
-    static scopeClass = Shacl.ns + "scopeClass";
+    static targetClass = Shacl.ns + "targetClass";
     static property = Shacl.ns + "property";
     static nodeKind = Shacl.ns + "nodeKind";
     static path = Shacl.ns + "path";
     static severity = Shacl.ns + "severity";
     static datatype = Shacl.ns + "datatype";
     static class = Shacl.ns + "class";
+    static in = Shacl.ns + "in";
+
     static or = Shacl.ns + "or";
     static Violation = Shacl.ns + "Violation";
     static Warning = Shacl.ns + "Warning";
@@ -34,14 +36,13 @@ class Shacl {
             this.shapes.push(new Shape(shape));
         }
 
-        console.log(this);
     }
 
     validate(jsonld, failureCallback) {
         JsonLdhelper.link(jsonld, false);
         let typeIndex = JsonLdhelper.typeIndex(jsonld);
 
-        this.shapes.forEach(shape => shape.validate(typeIndex[shape.scopeClass], failureCallback));
+        this.shapes.forEach(shape => shape.validate(typeIndex[shape.targetClass], failureCallback));
 
     }
 

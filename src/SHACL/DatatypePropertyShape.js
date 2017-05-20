@@ -17,13 +17,13 @@ class DatatypePropertyShape extends MinMaxCountPropertyShape {
     validate(jsonld, failureCallback) {
         super.validate(jsonld, failureCallback);
 
-        if (jsonld[this.path] !== undefined) {
+        if (jsonld[this.path]) {
             for (let object of jsonld[this.path]) {
                 if (object["@type"] === undefined) {
-                    failureCallback(new ValidationError(this, `No datatype found, should be ${this.datatype}`))
+                    failureCallback(new ValidationError(this, `No datatype found, should be ${this.datatype}`, jsonld))
                 }
                 if (object["@type"] !== this.datatype) {
-                    failureCallback(new ValidationError(this, `Wrong datatype found, should be <${this.datatype}< but was <${object["@type"]}>`))
+                    failureCallback(new ValidationError(this, `Forventet datatype ${this.datatype} med fant ${object["@type"]}`, jsonld))
                 }
             }
         }

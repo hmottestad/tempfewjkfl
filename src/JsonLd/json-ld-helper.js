@@ -105,10 +105,26 @@ class JsonLdhelper {
                     } else {
                         // console.log("HERE: " + type);
                     }
+
+
                 }
 
                 if (resourceObject["@value"] !== undefined) {
+                    let temp = resourceObject;
                     resourceObject = resourceObject["@value"];
+                    if(typeof resourceObject === "string"){
+                        resourceObject = new String(resourceObject);
+                    }
+                    if(typeof resourceObject === "number"){
+                        resourceObject = new Number(resourceObject);
+                    }
+                    // resourceObject.prototype.getJsonLdObject = function () {
+                    //     return temp;
+                    // };
+
+                    resourceObject.jsonld = temp;
+
+
                 }
             }
             return resourceObject;

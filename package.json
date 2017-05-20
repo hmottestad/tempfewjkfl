@@ -3,12 +3,14 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "fs-extra": "^3.0.1",
     "jsonld": "^0.4.12",
     "moment": "^2.18.1",
     "n3": "^0.10.0",
     "rdf": "^3.0.1",
     "react": "^15.5.4",
-    "react-dom": "^15.5.4"
+    "react-dom": "^15.5.4",
+    "react-dropzone": "^3.13.1"
   },
   "devDependencies": {
     "babel-cli": "^6.24.1",

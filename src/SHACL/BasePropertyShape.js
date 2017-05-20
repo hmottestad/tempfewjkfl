@@ -7,6 +7,8 @@ class BasePropertyShape {
     constructor(jsonld, shape) {
         if (jsonld[Shacl.severity] !== undefined) {
             this.severity = jsonld[Shacl.severity][0]["@id"];
+        } else{
+            this.severity = Shacl.Violation;
         }
         this.shape = shape;
     }

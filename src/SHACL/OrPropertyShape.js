@@ -1,6 +1,7 @@
 import MinMaxCountPropertyShape from "./MinMaxCountPropertyShape.js";
 import PropertyShape from "./PropertyShape.js";
 import ValidationError from "./ValidationError.js";
+import DatatypePropertyShape from "./DatatypePropertyShape.js";
 
 
 import Shacl from "./Shacl.js";
@@ -32,7 +33,6 @@ class OrPropertyShape extends MinMaxCountPropertyShape {
 
         for (let object of jsonld[this.path]) {
 
-            console.log(object)
 
             let numberOfTimesCalled = 0;
             let orFailureCallback = function (failure) {
@@ -45,7 +45,18 @@ class OrPropertyShape extends MinMaxCountPropertyShape {
             this.or.forEach(propertyShape => propertyShape.validate(temp, orFailureCallback))
 
             if (numberOfTimesCalled >= this.or.length) {
-                failureCallback(new ValidationError(this, `Didn't match any of the sh:or parts.`))
+                if(this.or.filter(propertyShap => ! propertyShap instanceof DatatypePropertyShape).length === 0){
+
+                    let datatyper = this.or
+                        .map(propertyShape => ValidationError.prefix(propertyShape.datatype))
+                        .reduce((a,b) => a+", "+b);
+
+                    failureCallback(new ValidationError(this, `Forventet at "${object["@value"]}" skulle ha en av følgende datatyper: ${datatyper}`, jsonld))
+
+                }else{
+                    failureCallback(new ValidationError(this, `sh:or feil`, jsonld))
+
+                }
             }
 
         }
