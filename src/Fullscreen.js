@@ -4,6 +4,7 @@ import DcatApNoShacl from './dcat-ap-no-shacl.js'
 import Shacl from './SHACL/Shacl.js';
 import RdfToJsonLD from "./RdfToJsonLD.js";
 import ValidationError from "./SHACL/ValidationError.js";
+import LanguagesSkos from "./vokabular/Languages-skos.js" ;
 
 class Fullscreen extends React.Component {
     constructor() {
@@ -14,6 +15,7 @@ class Fullscreen extends React.Component {
             dropzoneActive: false,
             shacl: null,
             validationErrors: [],
+            loading: false,
         }
 
         this.validate = this.validate.bind(this);
@@ -58,31 +60,41 @@ class Fullscreen extends React.Component {
     validate(file) {
         console.log(file)
 
+        this.setState({syntaxError: null})
+        this.setState({loading: true})
+
         let reader = new FileReader();
 
 
         reader.onload = function (e) {
             let text = reader.result;
 
+            let background = function () {
+                if (file.name.indexOf(".json") > 0 || file.name.indexOf(".jsonld") > 0) {
+                    console.log("JSONLD")
+                } else {
+                    //assume turtle
 
-            if (file.name.indexOf(".json") > 0 || file.name.indexOf(".jsonld") > 0) {
-                console.log("JSONLD")
-            } else {
-                //assume turtle
 
+                    RdfToJsonLD.rdfToJsonld(text + "\n" + LanguagesSkos.ntriples).then(jsonld => {
+                        this.state.shacl.validate(jsonld, error => {
+                            let validationErrors = this.state.validationErrors;
+                            validationErrors.push(error);
+                            this.setState({validationErrors})
+                            this.setState({loading: false})
 
-                RdfToJsonLD.rdfToJsonld(text).then(jsonld => {
-                    this.state.shacl.validate(jsonld, error => {
-                        let validationErrors = this.state.validationErrors;
-                        validationErrors.push(error);
-                        this.setState({validationErrors})
+                        })
+                    }).catch(error => {
+                        console.error(error)
+                        this.setState({loading: false})
+                        this.setState({syntaxError: ":("})
                     })
-                }).catch(error => {
-                    console.error(error)
-                    this.setState({syntaxError:":("})
-                })
 
+                }
             }
+
+            background = background.bind(this);
+            window.setTimeout(background, 100);
 
 
         };
@@ -120,14 +132,23 @@ class Fullscreen extends React.Component {
 
         console.log(this.state);
 
+        let loading = this.state.loading;
+
         if (!this.state.shacl) {
             return <h4>Laster</h4>
         }
 
         let forMangeFiler = files.length > 1
 
+        let syntaxError = this.state.syntaxError;
+
         let gyldig = files.length === 1 && this.state.validationErrors.filter(error => Shacl.Violation == error.severity).length === 0
         let ikkeGyldig = files.length === 1 && this.state.validationErrors.filter(error => Shacl.Violation == error.severity).length > 0
+
+        if (syntaxError) {
+            gyldig = false;
+            ikkeGyldig = false;
+        }
 
         let groupedValidationWarnings = {};
         this.state.validationErrors.filter(error => Shacl.Warning == error.severity).forEach(error => {
@@ -146,7 +167,7 @@ class Fullscreen extends React.Component {
         let groupedValidationViolations = {};
         this.state.validationErrors.filter(error => Shacl.Violation == error.severity).forEach(error => {
 
-            if(!error.jsonld){
+            if (!error.jsonld) {
                 console.error(error)
                 //return;
             }
@@ -163,55 +184,54 @@ class Fullscreen extends React.Component {
         });
 
 
-
         return (
-        <div style={{marginTop: -10, padding: 10, marginRight: -15, marginLeft: -15, minHeight: 300}}>
-            {/*<div className={gyldig ? "faded-green-background" : ikkeGyldig ? "faded-red-background" : ""} style={{marginTop: -10, padding: 10, marginRight: -15, marginLeft: -15, minHeight: 1000}}>*/}
+            <div style={{marginTop: -10, padding: 10, marginRight: -15, marginLeft: -15, minHeight: 300}}>
+                {/*<div className={gyldig ? "faded-green-background" : ikkeGyldig ? "faded-red-background" : ""} style={{marginTop: -10, padding: 10, marginRight: -15, marginLeft: -15, minHeight: 1000}}>*/}
 
-            <div >
-                <Dropzone
-                    disableClick
-                    style={{border: "dashed"}}
-                    accept={accept}
-                    onDrop={this.onDrop.bind(this)}
-                    onDragEnter={this.onDragEnter.bind(this)}
-                    onDragLeave={this.onDragLeave.bind(this)}
-                >
-                    { dropzoneActive && <div style={overlayStyle}>Slipp</div> }
-                    <div style={{height: 240, width: "100%"}}>
+                <div >
+                    <Dropzone
+                        disableClick
+                        style={{border: "dashed"}}
+                        accept={accept}
+                        onDrop={this.onDrop.bind(this)}
+                        onDragEnter={this.onDragEnter.bind(this)}
+                        onDragLeave={this.onDragLeave.bind(this)}
+                    >
+                        { dropzoneActive && <div style={overlayStyle}>Slipp</div> }
+                        <div style={{height: 240, width: "100%"}}>
 
-                        <h3 style={{textAlign: "center", paddingTop: 90}}>Slipp en DCAT fil her</h3>
-                        {forMangeFiler && <h4 style={{textAlign: "center"}}>For mange filer!</h4>}
-                        {gyldig && <h4 style={{textAlign: "center"}} className="green"><span className="lighter-black">"{this.state.files[0].name}"</span> er gyldig <span >✓</span></h4>}
-                        {ikkeGyldig && <h4 style={{textAlign: "center"}} className="red"><span className="lighter-black">"{this.state.files[0].name}"</span> er ikke gyldig <span >✗</span></h4>}
-                        {this.state.syntaxError && <h4 style={{textAlign: "center"}} className="red"><span className="lighter-black">"{this.state.files[0].name}"</span> har syntax feil <span >✗</span></h4>}
-
+                            <h3 style={{textAlign: "center", paddingTop: 90}}>Slipp en DCAT fil her</h3>
+                            {forMangeFiler && <h4 style={{textAlign: "center"}}>For mange filer!</h4>}
+                            {!loading && gyldig && <h4 style={{textAlign: "center"}} className="green"><span className="lighter-black">"{this.state.files[0].name}"</span> er gyldig <span >✓</span></h4>}
+                            {!loading && ikkeGyldig && <h4 style={{textAlign: "center"}} className="red"><span className="lighter-black">"{this.state.files[0].name}"</span> er ikke gyldig <span >✗</span></h4>}
+                            {!loading && syntaxError && <h4 style={{textAlign: "center"}} className="red"><span className="lighter-black">"{this.state.files[0].name}"</span> har syntax feil <span >✗</span></h4>}
+                            {loading && <h4 style={{textAlign: "center"}}>Validerer <span className="lighter-black">"{this.state.files[0].name}"</span>...</h4>}
                         </div>
-                </Dropzone>
-            </div>
-            <div>
-                <h2><a className="link" href="#_Avvik" id="_Avvik">Avvik</a></h2>
-                {Object.keys(groupedValidationViolations).map(id =>
-                    <RenderError id={id} group={groupedValidationViolations}/>
-                )}
-                {this.state.validationErrors.filter(error => Shacl.Violation == error.severity).length == 0 && <p>Ingen avvik</p>}
+                    </Dropzone>
+                </div>
+                <div>
+                    <h2><a className="link" href="#_Avvik" id="_Avvik">Avvik</a></h2>
+                    {Object.keys(groupedValidationViolations).map(id =>
+                        <RenderError id={id} group={groupedValidationViolations}/>
+                    )}
+                    {this.state.validationErrors.filter(error => Shacl.Violation == error.severity).length == 0 && <p>Ingen avvik</p>}
+
+                </div>
+                <div>
+                    <h2><a className="link" href="#_Anbefalinger" id="_Anbefalinger">Anbefalinger</a></h2>
+                    {Object.keys(groupedValidationWarnings).map(id =>
+                        <RenderError id={id} group={groupedValidationWarnings}/>
+                    )}
+                    {this.state.validationErrors.filter(error => Shacl.Warning == error.severity).length == 0 && <p>Ingenting å forbedre</p>}
+
+                    {/*<ul>*/}
+                    {/*{this.state.validationErrors.filter(error => Shacl.Warning == error.severity).map((error, index) => <RenderError error={error} key={index}/>)}*/}
+                    {/*</ul>*/}
+                </div>
 
             </div>
-            <div>
-                <h2><a className="link" href="#_Anbefalinger" id="_Anbefalinger">Anbefalinger</a></h2>
-                {Object.keys(groupedValidationWarnings).map(id =>
-                    <RenderError id={id} group={groupedValidationWarnings}/>
-                )}
-                {this.state.validationErrors.filter(error => Shacl.Warning == error.severity).length == 0 && <p>Ingenting å forbedre</p>}
-
-                {/*<ul>*/}
-                {/*{this.state.validationErrors.filter(error => Shacl.Warning == error.severity).map((error, index) => <RenderError error={error} key={index}/>)}*/}
-                {/*</ul>*/}
-            </div>
-
-        </div>
-    )
-        ;
+        )
+            ;
     }
 }
 

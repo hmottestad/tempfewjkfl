@@ -4,6 +4,8 @@ import DatatypePropertyShape from "./DatatypePropertyShape.js";
 import ClassPropertyShape from "./ClassPropertyShape.js";
 import OrPropertyShape from "./OrPropertyShape.js";
 import InPropertyShape from "./InPropertyShape.js";
+import UniqueLangPropertyShape from "./UniqueLangPropertyShape.js";
+
 
 import Shacl from "./Shacl.js";
 
@@ -33,6 +35,10 @@ class PropertyShape {
 
         if (jsonld[Shacl.in] !== undefined) {
             return new InPropertyShape(jsonld, shape);
+        }
+
+        if (jsonld[Shacl.uniqueLang] !== undefined) {
+            return new UniqueLangPropertyShape(jsonld, shape);
         }
 
         if (jsonld[Shacl.minCount] !== undefined) {

@@ -31,6 +31,10 @@ var _ValidationError = require('./SHACL/ValidationError.js');
 
 var _ValidationError2 = _interopRequireDefault(_ValidationError);
 
+var _LanguagesSkos = require('./vokabular/Languages-skos.js');
+
+var _LanguagesSkos2 = _interopRequireDefault(_LanguagesSkos);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -52,7 +56,8 @@ var Fullscreen = function (_React$Component) {
             files: [],
             dropzoneActive: false,
             shacl: null,
-            validationErrors: []
+            validationErrors: [],
+            loading: false
         };
 
         _this.validate = _this.validate.bind(_this);
@@ -101,30 +106,40 @@ var Fullscreen = function (_React$Component) {
         value: function validate(file) {
             console.log(file);
 
+            this.setState({ syntaxError: null });
+            this.setState({ loading: true });
+
             var reader = new FileReader();
 
             reader.onload = function (e) {
-                var _this2 = this;
-
                 var text = reader.result;
 
-                if (file.name.indexOf(".json") > 0 || file.name.indexOf(".jsonld") > 0) {
-                    console.log("JSONLD");
-                } else {
-                    //assume turtle
+                var background = function background() {
+                    var _this2 = this;
+
+                    if (file.name.indexOf(".json") > 0 || file.name.indexOf(".jsonld") > 0) {
+                        console.log("JSONLD");
+                    } else {
+                        //assume turtle
 
 
-                    _RdfToJsonLD2.default.rdfToJsonld(text).then(function (jsonld) {
-                        _this2.state.shacl.validate(jsonld, function (error) {
-                            var validationErrors = _this2.state.validationErrors;
-                            validationErrors.push(error);
-                            _this2.setState({ validationErrors: validationErrors });
+                        _RdfToJsonLD2.default.rdfToJsonld(text + "\n" + _LanguagesSkos2.default.ntriples).then(function (jsonld) {
+                            _this2.state.shacl.validate(jsonld, function (error) {
+                                var validationErrors = _this2.state.validationErrors;
+                                validationErrors.push(error);
+                                _this2.setState({ validationErrors: validationErrors });
+                                _this2.setState({ loading: false });
+                            });
+                        }).catch(function (error) {
+                            console.error(error);
+                            _this2.setState({ loading: false });
+                            _this2.setState({ syntaxError: ":(" });
                         });
-                    }).catch(function (error) {
-                        console.error(error);
-                        _this2.setState({ syntaxError: ":(" });
-                    });
-                }
+                    }
+                };
+
+                background = background.bind(this);
+                window.setTimeout(background, 100);
             };
 
             reader.onload = reader.onload.bind(this);
@@ -164,13 +179,15 @@ var Fullscreen = function (_React$Component) {
 
             console.log(this.state);
 
+            var loading = this.state.loading;
+
             if (!this.state.shacl) {
                 return _react2.default.createElement(
                     'h4',
                     {
                         __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 124
+                            lineNumber: 138
                         },
                         __self: this
                     },
@@ -180,12 +197,19 @@ var Fullscreen = function (_React$Component) {
 
             var forMangeFiler = files.length > 1;
 
+            var syntaxError = this.state.syntaxError;
+
             var gyldig = files.length === 1 && this.state.validationErrors.filter(function (error) {
                 return _Shacl2.default.Violation == error.severity;
             }).length === 0;
             var ikkeGyldig = files.length === 1 && this.state.validationErrors.filter(function (error) {
                 return _Shacl2.default.Violation == error.severity;
             }).length > 0;
+
+            if (syntaxError) {
+                gyldig = false;
+                ikkeGyldig = false;
+            }
 
             var groupedValidationWarnings = {};
             this.state.validationErrors.filter(function (error) {
@@ -224,7 +248,7 @@ var Fullscreen = function (_React$Component) {
                 'div',
                 { style: { marginTop: -10, padding: 10, marginRight: -15, marginLeft: -15, minHeight: 300 }, __source: {
                         fileName: _jsxFileName,
-                        lineNumber: 168
+                        lineNumber: 188
                     },
                     __self: this
                 },
@@ -233,7 +257,7 @@ var Fullscreen = function (_React$Component) {
                     {
                         __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 171
+                            lineNumber: 191
                         },
                         __self: this
                     },
@@ -248,7 +272,7 @@ var Fullscreen = function (_React$Component) {
                             onDragLeave: this.onDragLeave.bind(this),
                             __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 172
+                                lineNumber: 192
                             },
                             __self: this
                         },
@@ -256,7 +280,7 @@ var Fullscreen = function (_React$Component) {
                             'div',
                             { style: overlayStyle, __source: {
                                     fileName: _jsxFileName,
-                                    lineNumber: 180
+                                    lineNumber: 200
                                 },
                                 __self: this
                             },
@@ -266,7 +290,7 @@ var Fullscreen = function (_React$Component) {
                             'div',
                             { style: { height: 240, width: "100%" }, __source: {
                                     fileName: _jsxFileName,
-                                    lineNumber: 181
+                                    lineNumber: 201
                                 },
                                 __self: this
                             },
@@ -274,7 +298,7 @@ var Fullscreen = function (_React$Component) {
                                 'h3',
                                 { style: { textAlign: "center", paddingTop: 90 }, __source: {
                                         fileName: _jsxFileName,
-                                        lineNumber: 183
+                                        lineNumber: 203
                                     },
                                     __self: this
                                 },
@@ -284,17 +308,17 @@ var Fullscreen = function (_React$Component) {
                                 'h4',
                                 { style: { textAlign: "center" }, __source: {
                                         fileName: _jsxFileName,
-                                        lineNumber: 184
+                                        lineNumber: 204
                                     },
                                     __self: this
                                 },
                                 'For mange filer!'
                             ),
-                            gyldig && _react2.default.createElement(
+                            !loading && gyldig && _react2.default.createElement(
                                 'h4',
                                 { style: { textAlign: "center" }, className: 'green', __source: {
                                         fileName: _jsxFileName,
-                                        lineNumber: 185
+                                        lineNumber: 205
                                     },
                                     __self: this
                                 },
@@ -302,7 +326,7 @@ var Fullscreen = function (_React$Component) {
                                     'span',
                                     { className: 'lighter-black', __source: {
                                             fileName: _jsxFileName,
-                                            lineNumber: 185
+                                            lineNumber: 205
                                         },
                                         __self: this
                                     },
@@ -316,18 +340,18 @@ var Fullscreen = function (_React$Component) {
                                     {
                                         __source: {
                                             fileName: _jsxFileName,
-                                            lineNumber: 185
+                                            lineNumber: 205
                                         },
                                         __self: this
                                     },
                                     '\u2713'
                                 )
                             ),
-                            ikkeGyldig && _react2.default.createElement(
+                            !loading && ikkeGyldig && _react2.default.createElement(
                                 'h4',
                                 { style: { textAlign: "center" }, className: 'red', __source: {
                                         fileName: _jsxFileName,
-                                        lineNumber: 186
+                                        lineNumber: 206
                                     },
                                     __self: this
                                 },
@@ -335,7 +359,7 @@ var Fullscreen = function (_React$Component) {
                                     'span',
                                     { className: 'lighter-black', __source: {
                                             fileName: _jsxFileName,
-                                            lineNumber: 186
+                                            lineNumber: 206
                                         },
                                         __self: this
                                     },
@@ -349,18 +373,18 @@ var Fullscreen = function (_React$Component) {
                                     {
                                         __source: {
                                             fileName: _jsxFileName,
-                                            lineNumber: 186
+                                            lineNumber: 206
                                         },
                                         __self: this
                                     },
                                     '\u2717'
                                 )
                             ),
-                            this.state.syntaxError && _react2.default.createElement(
+                            !loading && syntaxError && _react2.default.createElement(
                                 'h4',
                                 { style: { textAlign: "center" }, className: 'red', __source: {
                                         fileName: _jsxFileName,
-                                        lineNumber: 187
+                                        lineNumber: 207
                                     },
                                     __self: this
                                 },
@@ -368,7 +392,7 @@ var Fullscreen = function (_React$Component) {
                                     'span',
                                     { className: 'lighter-black', __source: {
                                             fileName: _jsxFileName,
-                                            lineNumber: 187
+                                            lineNumber: 207
                                         },
                                         __self: this
                                     },
@@ -382,12 +406,35 @@ var Fullscreen = function (_React$Component) {
                                     {
                                         __source: {
                                             fileName: _jsxFileName,
-                                            lineNumber: 187
+                                            lineNumber: 207
                                         },
                                         __self: this
                                     },
                                     '\u2717'
                                 )
+                            ),
+                            loading && _react2.default.createElement(
+                                'h4',
+                                { style: { textAlign: "center" }, __source: {
+                                        fileName: _jsxFileName,
+                                        lineNumber: 208
+                                    },
+                                    __self: this
+                                },
+                                'Validerer ',
+                                _react2.default.createElement(
+                                    'span',
+                                    { className: 'lighter-black', __source: {
+                                            fileName: _jsxFileName,
+                                            lineNumber: 208
+                                        },
+                                        __self: this
+                                    },
+                                    '"',
+                                    this.state.files[0].name,
+                                    '"'
+                                ),
+                                '...'
                             )
                         )
                     )
@@ -397,7 +444,7 @@ var Fullscreen = function (_React$Component) {
                     {
                         __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 192
+                            lineNumber: 212
                         },
                         __self: this
                     },
@@ -406,7 +453,7 @@ var Fullscreen = function (_React$Component) {
                         {
                             __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 193
+                                lineNumber: 213
                             },
                             __self: this
                         },
@@ -414,7 +461,7 @@ var Fullscreen = function (_React$Component) {
                             'a',
                             { className: 'link', href: '#_Avvik', id: '_Avvik', __source: {
                                     fileName: _jsxFileName,
-                                    lineNumber: 193
+                                    lineNumber: 213
                                 },
                                 __self: this
                             },
@@ -424,7 +471,7 @@ var Fullscreen = function (_React$Component) {
                     Object.keys(groupedValidationViolations).map(function (id) {
                         return _react2.default.createElement(RenderError, { id: id, group: groupedValidationViolations, __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 195
+                                lineNumber: 215
                             },
                             __self: _this3
                         });
@@ -436,7 +483,7 @@ var Fullscreen = function (_React$Component) {
                         {
                             __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 197
+                                lineNumber: 217
                             },
                             __self: this
                         },
@@ -448,7 +495,7 @@ var Fullscreen = function (_React$Component) {
                     {
                         __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 200
+                            lineNumber: 220
                         },
                         __self: this
                     },
@@ -457,7 +504,7 @@ var Fullscreen = function (_React$Component) {
                         {
                             __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 201
+                                lineNumber: 221
                             },
                             __self: this
                         },
@@ -465,7 +512,7 @@ var Fullscreen = function (_React$Component) {
                             'a',
                             { className: 'link', href: '#_Anbefalinger', id: '_Anbefalinger', __source: {
                                     fileName: _jsxFileName,
-                                    lineNumber: 201
+                                    lineNumber: 221
                                 },
                                 __self: this
                             },
@@ -475,7 +522,7 @@ var Fullscreen = function (_React$Component) {
                     Object.keys(groupedValidationWarnings).map(function (id) {
                         return _react2.default.createElement(RenderError, { id: id, group: groupedValidationWarnings, __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 203
+                                lineNumber: 223
                             },
                             __self: _this3
                         });
@@ -487,7 +534,7 @@ var Fullscreen = function (_React$Component) {
                         {
                             __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 205
+                                lineNumber: 225
                             },
                             __self: this
                         },
@@ -523,7 +570,7 @@ var RenderError = function (_React$Component2) {
                 {
                     __source: {
                         fileName: _jsxFileName,
-                        lineNumber: 226
+                        lineNumber: 246
                     },
                     __self: this
                 },
@@ -532,7 +579,7 @@ var RenderError = function (_React$Component2) {
                     {
                         __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 227
+                            lineNumber: 247
                         },
                         __self: this
                     },
@@ -541,7 +588,7 @@ var RenderError = function (_React$Component2) {
                         'span',
                         { style: { color: "darkgreen" }, __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 227
+                                lineNumber: 247
                             },
                             __self: this
                         },
@@ -553,7 +600,7 @@ var RenderError = function (_React$Component2) {
                     {
                         __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 228
+                            lineNumber: 248
                         },
                         __self: this
                     },
@@ -562,7 +609,7 @@ var RenderError = function (_React$Component2) {
                         'span',
                         { style: { color: "darkgreen" }, __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 228
+                                lineNumber: 248
                             },
                             __self: this
                         },
@@ -574,7 +621,7 @@ var RenderError = function (_React$Component2) {
                     {
                         __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 229
+                            lineNumber: 249
                         },
                         __self: this
                     },
@@ -585,7 +632,7 @@ var RenderError = function (_React$Component2) {
                             'li',
                             { style: { listStyle: "none" }, __source: {
                                     fileName: _jsxFileName,
-                                    lineNumber: 233
+                                    lineNumber: 253
                                 },
                                 __self: _this5
                             },
@@ -594,7 +641,7 @@ var RenderError = function (_React$Component2) {
                                 {
                                     __source: {
                                         fileName: _jsxFileName,
-                                        lineNumber: 234
+                                        lineNumber: 254
                                     },
                                     __self: _this5
                                 },
@@ -602,7 +649,7 @@ var RenderError = function (_React$Component2) {
                                     'h7',
                                     { style: { color: "darkgreen" }, __source: {
                                             fileName: _jsxFileName,
-                                            lineNumber: 235
+                                            lineNumber: 255
                                         },
                                         __self: _this5
                                     },
@@ -613,7 +660,7 @@ var RenderError = function (_React$Component2) {
                                     {
                                         __source: {
                                             fileName: _jsxFileName,
-                                            lineNumber: 237
+                                            lineNumber: 257
                                         },
                                         __self: _this5
                                     },
@@ -622,7 +669,7 @@ var RenderError = function (_React$Component2) {
                                             'li',
                                             { style: { listStyle: "none" }, __source: {
                                                     fileName: _jsxFileName,
-                                                    lineNumber: 239
+                                                    lineNumber: 259
                                                 },
                                                 __self: _this5
                                             },
@@ -637,7 +684,7 @@ var RenderError = function (_React$Component2) {
                 _react2.default.createElement('hr', {
                     __source: {
                         fileName: _jsxFileName,
-                        lineNumber: 248
+                        lineNumber: 268
                     },
                     __self: this
                 })

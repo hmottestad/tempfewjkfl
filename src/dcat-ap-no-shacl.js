@@ -663,10 +663,14 @@ class DcatApNoShacl {
                   sh:targetClass  skos:Concept ;
                   sh:property
                   [
-                          sh:maxCount   1 ;
                           sh:minCount   1 ;
                           sh:path skos:prefLabel ;
                           sh:nodeKind sh:Literal;
+                          sh:severity   sh:Violation
+                  ]    ,
+                  [
+                          sh:uniqueLang   true ;   
+                          sh:path skos:prefLabel ;                                                
                           sh:severity   sh:Violation
                   ]    ,
                   [
@@ -696,7 +700,6 @@ class DcatApNoShacl {
     `;
 
     static asJsonLd(){
-        console.log("yay")
         return RdfToJsonLD.rdfToJsonld(this.shaclTurtle)
     }
 

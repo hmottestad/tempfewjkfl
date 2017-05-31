@@ -17,6 +17,7 @@ class Shacl {
     static datatype = Shacl.ns + "datatype";
     static class = Shacl.ns + "class";
     static in = Shacl.ns + "in";
+    static uniqueLang = Shacl.ns + "uniqueLang";
 
     static or = Shacl.ns + "or";
     static Violation = Shacl.ns + "Violation";

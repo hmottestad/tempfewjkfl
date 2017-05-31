@@ -30,6 +30,10 @@ var _InPropertyShape = require("./InPropertyShape.js");
 
 var _InPropertyShape2 = _interopRequireDefault(_InPropertyShape);
 
+var _UniqueLangPropertyShape = require("./UniqueLangPropertyShape.js");
+
+var _UniqueLangPropertyShape2 = _interopRequireDefault(_UniqueLangPropertyShape);
+
 var _Shacl = require("./Shacl.js");
 
 var _Shacl2 = _interopRequireDefault(_Shacl);
@@ -65,6 +69,10 @@ var PropertyShape = function () {
 
             if (jsonld[_Shacl2.default.in] !== undefined) {
                 return new _InPropertyShape2.default(jsonld, shape);
+            }
+
+            if (jsonld[_Shacl2.default.uniqueLang] !== undefined) {
+                return new _UniqueLangPropertyShape2.default(jsonld, shape);
             }
 
             if (jsonld[_Shacl2.default.minCount] !== undefined) {

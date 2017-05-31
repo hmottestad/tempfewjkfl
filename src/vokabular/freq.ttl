@@ -1,0 +1,486 @@
+<http://purl.org/adms/licencetype/UnknownIPR> <http://www.w3.org/2004/02/skos/core#inScheme> <http://purl.org/adms/licencetype/1.0> .
+<http://purl.org/adms/licencetype/UnknownIPR> <http://www.w3.org/2004/02/skos/core#prefLabel> "Unknown IPR"@en .
+<http://purl.org/adms/licencetype/UnknownIPR> <http://www.w3.org/2004/02/skos/core#notation> "UnknownIPR" .
+<http://purl.org/adms/licencetype/UnknownIPR> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
+<http://purl.org/adms/licencetype/UnknownIPR> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://purl.org/adms/licencetype/NoDerivativeWork> <http://www.w3.org/2004/02/skos/core#inScheme> <http://purl.org/adms/licencetype/1.0> .
+<http://purl.org/adms/licencetype/NoDerivativeWork> <http://www.w3.org/2004/02/skos/core#prefLabel> "No derivative work"@en .
+<http://purl.org/adms/licencetype/NoDerivativeWork> <http://www.w3.org/2004/02/skos/core#notation> "NoDerivativeWork" .
+<http://purl.org/adms/licencetype/NoDerivativeWork> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
+<http://purl.org/adms/licencetype/NoDerivativeWork> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://www.w3.org/2004/02/skos/core#definition> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+<http://purl.org/adms/assettype/InformationExchangePackageDescription> <http://www.w3.org/2004/02/skos/core#inScheme> <http://purl.org/adms/assettype/1.0> .
+<http://purl.org/adms/assettype/InformationExchangePackageDescription> <http://www.w3.org/2004/02/skos/core#definition> "A collection of artifacts that define and describe the structure and content of an information exchange  [NIEM Glossary]. An Information Exchange Package Description has a specific information exchange context and may refer to other semantic assets."@en .
+<http://purl.org/adms/assettype/InformationExchangePackageDescription> <http://www.w3.org/2004/02/skos/core#notation> "InformationExchangePackageDescription" .
+<http://purl.org/adms/assettype/InformationExchangePackageDescription> <http://www.w3.org/2004/02/skos/core#prefLabel> "Information Exchange Package Description"@en .
+<http://purl.org/adms/assettype/InformationExchangePackageDescription> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
+<http://purl.org/adms/assettype/InformationExchangePackageDescription> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://purl.org/adms> <http://purl.org/vocab/vann/preferredNamespacePrefix> "admsv"@en .
+<http://purl.org/adms> <http://purl.org/dc/terms/creator> <http://stijngoedertier.org> .
+<http://purl.org/adms> <http://purl.org/dc/terms/conformsTo> <https://joinup.ec.europa.eu/elibrary/document/isa-deliverable-process-and-methodology-developing-core-vocabularies> .
+<http://purl.org/adms> <http://purl.org/dc/terms/modified> "2012-04-13"^^<http://www.w3.org/2001/XMLSchema#date> .
+<http://purl.org/adms> <http://purl.org/dc/terms/description> "This file specifies the controlled vocabularies defined by ADMS v1.0 as SKOS concept schemes and SKOS concepts.\n    "@en .
+<http://purl.org/adms> <http://www.w3.org/2007/05/powder-s#describedby> <https://joinup.ec.europa.eu/asset/adms/release/100> .
+<http://purl.org/adms> <http://www.w3.org/2000/01/rdf-schema#comment> "This file specifies the controlled vocabularies defined by ADMS v1.0 as SKOS concept schemes and SKOS concepts."@en .
+<http://purl.org/adms> <http://www.w3.org/2002/07/owl#versionInfo> "Version 1.00 13 March 2012"@en .
+<http://purl.org/adms> <http://purl.org/dc/terms/abstract> "This file specifies the controlled vocabularies defined by ADMS v1.0 as SKOS concept schemes and SKOS concepts.\n    "@en .
+<http://purl.org/adms> <http://purl.org/vocab/vann/preferredNamespaceUri> "http://purl.org/adms/"@en .
+<http://purl.org/adms> <http://xmlns.com/foaf/0.1/maker> <http://stijngoedertier.org> .
+<http://purl.org/adms> <http://purl.org/dc/terms/rights> "Copyright (c) 2012 European Union."@en .
+<http://purl.org/adms> <http://www.w3.org/2000/01/rdf-schema#label> "Controlled vocabularies for the Asset Description Metadata Schema"@en .
+<http://purl.org/adms> <http://creativecommons.org/ns#attributionURL> <http://ec.europa.eu/> .
+<http://purl.org/adms> <http://purl.org/dc/terms/license> <https://joinup.ec.europa.eu/category/licence/isa-open-metadata-licence-v11> .
+<http://purl.org/adms> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
+<http://purl.org/adms> <http://creativecommons.org/ns#attributionName> "European Commission"@en .
+<http://purl.org/adms/status/Completed> <http://www.w3.org/2004/02/skos/core#inScheme> <http://purl.org/adms/status/1.0> .
+<http://purl.org/adms/status/Completed> <http://www.w3.org/2004/02/skos/core#prefLabel> "Completed"@en .
+<http://purl.org/adms/status/Completed> <http://www.w3.org/2004/02/skos/core#notation> "Completed" .
+<http://purl.org/adms/status/Completed> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
+<http://purl.org/adms/status/Completed> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://purl.org/adms/representationtechnique/RuleML> <http://www.w3.org/2004/02/skos/core#inScheme> <http://purl.org/adms/representationtechnique/1.0> .
+<http://purl.org/adms/representationtechnique/RuleML> <http://www.w3.org/2004/02/skos/core#notation> "RuleML" .
+<http://purl.org/adms/representationtechnique/RuleML> <http://www.w3.org/2004/02/skos/core#prefLabel> "Rule Markup Langauge"@en .
+<http://purl.org/adms/representationtechnique/RuleML> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
+<http://purl.org/adms/representationtechnique/RuleML> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://purl.org/adms/representationtechnique/KIF> <http://www.w3.org/2004/02/skos/core#inScheme> <http://purl.org/adms/representationtechnique/1.0> .
+<http://purl.org/adms/representationtechnique/KIF> <http://www.w3.org/2004/02/skos/core#prefLabel> "Knowledge Interchange Format"@en .
+<http://purl.org/adms/representationtechnique/KIF> <http://www.w3.org/2004/02/skos/core#notation> "KIF" .
+<http://purl.org/adms/representationtechnique/KIF> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
+<http://purl.org/adms/representationtechnique/KIF> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://purl.org/adms/representationtechnique/WSMO> <http://www.w3.org/2004/02/skos/core#inScheme> <http://purl.org/adms/representationtechnique/1.0> .
+<http://purl.org/adms/representationtechnique/WSMO> <http://www.w3.org/2004/02/skos/core#prefLabel> "Web Service Modelling Ontology"@en .
+<http://purl.org/adms/representationtechnique/WSMO> <http://www.w3.org/2004/02/skos/core#notation> "WSMO" .
+<http://purl.org/adms/representationtechnique/WSMO> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
+<http://purl.org/adms/representationtechnique/WSMO> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://purl.org/adms/representationtechnique/Schematron> <http://www.w3.org/2004/02/skos/core#inScheme> <http://purl.org/adms/representationtechnique/1.0> .
+<http://purl.org/adms/representationtechnique/Schematron> <http://www.w3.org/2004/02/skos/core#prefLabel> "Schematron"@en .
+<http://purl.org/adms/representationtechnique/Schematron> <http://www.w3.org/2004/02/skos/core#notation> "Schematron" .
+<http://purl.org/adms/representationtechnique/Schematron> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
+<http://purl.org/adms/representationtechnique/Schematron> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://purl.org/adms/representationtechnique/RelaxNG> <http://www.w3.org/2004/02/skos/core#inScheme> <http://purl.org/adms/representationtechnique/1.0> .
+<http://purl.org/adms/representationtechnique/RelaxNG> <http://www.w3.org/2004/02/skos/core#prefLabel> "Relax NG"@en .
+<http://purl.org/adms/representationtechnique/RelaxNG> <http://www.w3.org/2004/02/skos/core#notation> "RelaxNG" .
+<http://purl.org/adms/representationtechnique/RelaxNG> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
+<http://purl.org/adms/representationtechnique/RelaxNG> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://purl.org/adms/representationtechnique/HumanLanguage> <http://www.w3.org/2004/02/skos/core#inScheme> <http://purl.org/adms/representationtechnique/1.0> .
+<http://purl.org/adms/representationtechnique/HumanLanguage> <http://www.w3.org/2004/02/skos/core#prefLabel> "Human Language"@en .
+<http://purl.org/adms/representationtechnique/HumanLanguage> <http://www.w3.org/2004/02/skos/core#notation> "HumanLanguage" .
+<http://purl.org/adms/representationtechnique/HumanLanguage> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
+<http://purl.org/adms/representationtechnique/HumanLanguage> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://purl.org/adms/representationtechnique/1.0> <http://www.w3.org/2004/02/skos/core#hasTopConcept> <http://purl.org/adms/representationtechnique/XMLSchema> .
+<http://purl.org/adms/representationtechnique/1.0> <http://www.w3.org/2004/02/skos/core#hasTopConcept> <http://purl.org/adms/representationtechnique/OWL> .
+<http://purl.org/adms/representationtechnique/1.0> <http://www.w3.org/2004/02/skos/core#hasTopConcept> <http://purl.org/adms/representationtechnique/KIF> .
+<http://purl.org/adms/representationtechnique/1.0> <http://www.w3.org/2004/02/skos/core#hasTopConcept> <http://purl.org/adms/representationtechnique/SPARQL> .
+<http://purl.org/adms/representationtechnique/1.0> <http://www.w3.org/2004/02/skos/core#hasTopConcept> <http://purl.org/adms/representationtechnique/SBVR> .
+<http://purl.org/adms/representationtechnique/1.0> <http://www.w3.org/2004/02/skos/core#hasTopConcept> <http://purl.org/adms/representationtechnique/Prolog> .
+<http://purl.org/adms/representationtechnique/1.0> <http://www.w3.org/2004/02/skos/core#hasTopConcept> <http://purl.org/adms/representationtechnique/Diagram> .
+<http://purl.org/adms/representationtechnique/1.0> <http://www.w3.org/2004/02/skos/core#hasTopConcept> <http://purl.org/adms/representationtechnique/BPMN> .
+<http://purl.org/adms/representationtechnique/1.0> <http://www.w3.org/2004/02/skos/core#hasTopConcept> <http://purl.org/adms/representationtechnique/Archimate> .
+<http://purl.org/adms/representationtechnique/1.0> <http://www.w3.org/2004/02/skos/core#hasTopConcept> <http://purl.org/adms/representationtechnique/Schematron> .
+<http://purl.org/adms/representationtechnique/1.0> <http://www.w3.org/2004/02/skos/core#hasTopConcept> <http://purl.org/adms/representationtechnique/WSDL> .
+<http://purl.org/adms/representationtechnique/1.0> <http://www.w3.org/2004/02/skos/core#hasTopConcept> <http://purl.org/adms/representationtechnique/SPIN> .
+<http://purl.org/adms/representationtechnique/1.0> <http://www.w3.org/2004/02/skos/core#hasTopConcept> <http://purl.org/adms/representationtechnique/DTD> .
+<http://purl.org/adms/representationtechnique/1.0> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://purl.org/adms/representationtechnique/1.0> <http://www.w3.org/2004/02/skos/core#hasTopConcept> <http://purl.org/adms/representationtechnique/RelaxNG> .
+<http://purl.org/adms/representationtechnique/1.0> <http://www.w3.org/2004/02/skos/core#hasTopConcept> <http://purl.org/adms/representationtechnique/Datalog> .
+<http://purl.org/adms/representationtechnique/1.0> <http://www.w3.org/2004/02/skos/core#hasTopConcept> <http://purl.org/adms/representationtechnique/WSMO> .
+<http://purl.org/adms/representationtechnique/1.0> <http://www.w3.org/2004/02/skos/core#hasTopConcept> <http://purl.org/adms/representationtechnique/RDFSchema> .
+<http://purl.org/adms/representationtechnique/1.0> <http://www.w3.org/2004/02/skos/core#hasTopConcept> <http://purl.org/adms/representationtechnique/HumanLanguage> .
+<http://purl.org/adms/representationtechnique/1.0> <http://www.w3.org/2004/02/skos/core#hasTopConcept> <http://purl.org/adms/representationtechnique/TopicMaps> .
+<http://purl.org/adms/representationtechnique/1.0> <http://www.w3.org/2004/02/skos/core#hasTopConcept> <http://purl.org/adms/representationtechnique/CommonLogic> .
+<http://purl.org/adms/representationtechnique/1.0> <http://www.w3.org/2004/02/skos/core#hasTopConcept> <http://purl.org/adms/representationtechnique/RIF> .
+<http://purl.org/adms/representationtechnique/1.0> <http://www.w3.org/2004/02/skos/core#hasTopConcept> <http://purl.org/adms/representationtechnique/UML> .
+<http://purl.org/adms/representationtechnique/1.0> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#ConceptScheme> .
+<http://purl.org/adms/representationtechnique/1.0> <http://www.w3.org/2004/02/skos/core#hasTopConcept> <http://purl.org/adms/representationtechnique/SWRL> .
+<http://purl.org/adms/representationtechnique/1.0> <http://www.w3.org/2004/02/skos/core#hasTopConcept> <http://purl.org/adms/representationtechnique/Genericode> .
+<http://purl.org/adms/representationtechnique/1.0> <http://www.w3.org/2004/02/skos/core#hasTopConcept> <http://purl.org/adms/representationtechnique/IDEF> .
+<http://purl.org/adms/representationtechnique/1.0> <http://www.w3.org/2000/01/rdf-schema#label> "Representation Technique"@en .
+<http://purl.org/adms/representationtechnique/1.0> <http://www.w3.org/2004/02/skos/core#hasTopConcept> <http://purl.org/adms/representationtechnique/RuleML> .
+<http://purl.org/adms/representationtechnique/1.0> <http://www.w3.org/2004/02/skos/core#hasTopConcept> <http://purl.org/adms/representationtechnique/SKOS> .
+<http://purl.org/adms/representationtechnique/IDEF> <http://www.w3.org/2004/02/skos/core#inScheme> <http://purl.org/adms/representationtechnique/1.0> .
+<http://purl.org/adms/representationtechnique/IDEF> <http://www.w3.org/2004/02/skos/core#prefLabel> "Integration Definition"@en .
+<http://purl.org/adms/representationtechnique/IDEF> <http://www.w3.org/2004/02/skos/core#notation> "IDEF" .
+<http://purl.org/adms/representationtechnique/IDEF> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
+<http://purl.org/adms/representationtechnique/IDEF> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://purl.org/adms/assettype/DomainModel> <http://www.w3.org/2004/02/skos/core#inScheme> <http://purl.org/adms/assettype/1.0> .
+<http://purl.org/adms/assettype/DomainModel> <http://www.w3.org/2004/02/skos/core#prefLabel> "Domain Model"@en .
+<http://purl.org/adms/assettype/DomainModel> <http://www.w3.org/2004/02/skos/core#definition> "A domain model is a conceptual view of a system or an information exchange that identifies the entities involved and their relationships [NIEM Glossary ]."@en .
+<http://purl.org/adms/assettype/DomainModel> <http://www.w3.org/2004/02/skos/core#notation> "DomainModel" .
+<http://purl.org/adms/assettype/DomainModel> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
+<http://purl.org/adms/assettype/DomainModel> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://purl.org/adms/interoperabilitylevel/Technical> <http://www.w3.org/2004/02/skos/core#inScheme> <http://purl.org/adms/interoperabilitylevel/1.0> .
+<http://purl.org/adms/interoperabilitylevel/Technical> <http://www.w3.org/2004/02/skos/core#prefLabel> "Technical"@en .
+<http://purl.org/adms/interoperabilitylevel/Technical> <http://www.w3.org/2004/02/skos/core#notation> "Technical" .
+<http://purl.org/adms/interoperabilitylevel/Technical> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
+<http://purl.org/adms/interoperabilitylevel/Technical> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://purl.org/adms/representationtechnique/RDFSchema> <http://www.w3.org/2004/02/skos/core#inScheme> <http://purl.org/adms/representationtechnique/1.0> .
+<http://purl.org/adms/representationtechnique/RDFSchema> <http://www.w3.org/2004/02/skos/core#prefLabel> "Resource Description Framework Schema"@en .
+<http://purl.org/adms/representationtechnique/RDFSchema> <http://www.w3.org/2004/02/skos/core#notation> "RDFSchema" .
+<http://purl.org/adms/representationtechnique/RDFSchema> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
+<http://purl.org/adms/representationtechnique/RDFSchema> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://purl.org/adms/representationtechnique/Prolog> <http://www.w3.org/2004/02/skos/core#inScheme> <http://purl.org/adms/representationtechnique/1.0> .
+<http://purl.org/adms/representationtechnique/Prolog> <http://www.w3.org/2004/02/skos/core#prefLabel> "Prolog"@en .
+<http://purl.org/adms/representationtechnique/Prolog> <http://www.w3.org/2004/02/skos/core#notation> "Prolog" .
+<http://purl.org/adms/representationtechnique/Prolog> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
+<http://purl.org/adms/representationtechnique/Prolog> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://purl.org/adms/representationtechnique/SKOS> <http://www.w3.org/2004/02/skos/core#inScheme> <http://purl.org/adms/representationtechnique/1.0> .
+<http://purl.org/adms/representationtechnique/SKOS> <http://www.w3.org/2004/02/skos/core#prefLabel> "Simple Knowledge Organization System"@en .
+<http://purl.org/adms/representationtechnique/SKOS> <http://www.w3.org/2004/02/skos/core#notation> "SKOS" .
+<http://purl.org/adms/representationtechnique/SKOS> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
+<http://purl.org/adms/representationtechnique/SKOS> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://purl.org/adms/assettype/1.0> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://purl.org/adms/assettype/1.0> <http://www.w3.org/2004/02/skos/core#hasTopConcept> <http://purl.org/adms/assettype/Taxonomy> .
+<http://purl.org/adms/assettype/1.0> <http://www.w3.org/2004/02/skos/core#hasTopConcept> <http://purl.org/adms/assettype/NameAuthorityList> .
+<http://purl.org/adms/assettype/1.0> <http://www.w3.org/2004/02/skos/core#hasTopConcept> <http://purl.org/adms/assettype/ServiceDescription> .
+<http://purl.org/adms/assettype/1.0> <http://www.w3.org/2004/02/skos/core#hasTopConcept> <http://purl.org/adms/assettype/DomainModel> .
+<http://purl.org/adms/assettype/1.0> <http://www.w3.org/2004/02/skos/core#hasTopConcept> <http://purl.org/adms/assettype/SyntaxEncodingScheme> .
+<http://purl.org/adms/assettype/1.0> <http://www.w3.org/2000/01/rdf-schema#label> "Asset Type"@en .
+<http://purl.org/adms/assettype/1.0> <http://www.w3.org/2004/02/skos/core#hasTopConcept> <http://purl.org/adms/assettype/CoreComponent> .
+<http://purl.org/adms/assettype/1.0> <http://www.w3.org/2004/02/skos/core#hasTopConcept> <http://purl.org/adms/assettype/Thesaurus> .
+<http://purl.org/adms/assettype/1.0> <http://www.w3.org/2004/02/skos/core#hasTopConcept> <http://purl.org/adms/assettype/Schema> .
+<http://purl.org/adms/assettype/1.0> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#ConceptScheme> .
+<http://purl.org/adms/assettype/1.0> <http://www.w3.org/2004/02/skos/core#hasTopConcept> <http://purl.org/adms/assettype/CodeList> .
+<http://purl.org/adms/assettype/1.0> <http://www.w3.org/2004/02/skos/core#hasTopConcept> <http://purl.org/adms/assettype/Mapping> .
+<http://purl.org/adms/assettype/1.0> <http://www.w3.org/2004/02/skos/core#hasTopConcept> <http://purl.org/adms/assettype/Ontology> .
+<http://purl.org/adms/assettype/1.0> <http://www.w3.org/2004/02/skos/core#hasTopConcept> <http://purl.org/adms/assettype/InformationExchangePackageDescription> .
+<http://purl.org/adms/representationtechnique/SPARQL> <http://www.w3.org/2004/02/skos/core#inScheme> <http://purl.org/adms/representationtechnique/1.0> .
+<http://purl.org/adms/representationtechnique/SPARQL> <http://www.w3.org/2004/02/skos/core#prefLabel> "SPARQL Query Language for RDF"@en .
+<http://purl.org/adms/representationtechnique/SPARQL> <http://www.w3.org/2004/02/skos/core#notation> "SPARQL" .
+<http://purl.org/adms/representationtechnique/SPARQL> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
+<http://purl.org/adms/representationtechnique/SPARQL> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://purl.org/adms/representationtechnique/Genericode> <http://www.w3.org/2004/02/skos/core#inScheme> <http://purl.org/adms/representationtechnique/1.0> .
+<http://purl.org/adms/representationtechnique/Genericode> <http://www.w3.org/2004/02/skos/core#prefLabel> "genericode"@en .
+<http://purl.org/adms/representationtechnique/Genericode> <http://www.w3.org/2004/02/skos/core#notation> "Genericode" .
+<http://purl.org/adms/representationtechnique/Genericode> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
+<http://purl.org/adms/representationtechnique/Genericode> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://www.w3.org/2004/02/skos/core#ConceptScheme> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/adms/assettype/Schema> <http://www.w3.org/2004/02/skos/core#inScheme> <http://purl.org/adms/assettype/1.0> .
+<http://purl.org/adms/assettype/Schema> <http://www.w3.org/2004/02/skos/core#prefLabel> "Schema"@en .
+<http://purl.org/adms/assettype/Schema> <http://www.w3.org/2004/02/skos/core#definition> "A schema is a concrete view on a system or information exchange, describing the structure, content, and semantics of data."@en .
+<http://purl.org/adms/assettype/Schema> <http://www.w3.org/2004/02/skos/core#notation> "Schema" .
+<http://purl.org/adms/assettype/Schema> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
+<http://purl.org/adms/assettype/Schema> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://purl.org/adms/representationtechnique/TopicMaps> <http://www.w3.org/2004/02/skos/core#inScheme> <http://purl.org/adms/representationtechnique/1.0> .
+<http://purl.org/adms/representationtechnique/TopicMaps> <http://www.w3.org/2004/02/skos/core#notation> "TopicMaps" .
+<http://purl.org/adms/representationtechnique/TopicMaps> <http://www.w3.org/2004/02/skos/core#prefLabel> "Topic Maps"@en .
+<http://purl.org/adms/representationtechnique/TopicMaps> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
+<http://purl.org/adms/representationtechnique/TopicMaps> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://purl.org/adms/licencetype/NonCommercialUseOnly> <http://www.w3.org/2004/02/skos/core#inScheme> <http://purl.org/adms/licencetype/1.0> .
+<http://purl.org/adms/licencetype/NonCommercialUseOnly> <http://www.w3.org/2004/02/skos/core#notation> "NonCommercialUseOnly" .
+<http://purl.org/adms/licencetype/NonCommercialUseOnly> <http://www.w3.org/2004/02/skos/core#prefLabel> "Non-commercial use only"@en .
+<http://purl.org/adms/licencetype/NonCommercialUseOnly> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
+<http://purl.org/adms/licencetype/NonCommercialUseOnly> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://purl.org/adms/assettype/Mapping> <http://www.w3.org/2004/02/skos/core#inScheme> <http://purl.org/adms/assettype/1.0> .
+<http://purl.org/adms/assettype/Mapping> <http://www.w3.org/2004/02/skos/core#definition> "relationship between a concept in one vocabulary and one or more concepts in another [ISO/DIS 25964-2]."@en .
+<http://purl.org/adms/assettype/Mapping> <http://www.w3.org/2004/02/skos/core#prefLabel> "Mapping"@en .
+<http://purl.org/adms/assettype/Mapping> <http://www.w3.org/2004/02/skos/core#notation> "Mapping" .
+<http://purl.org/adms/assettype/Mapping> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
+<http://purl.org/adms/assettype/Mapping> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://www.w3.org/2004/02/skos/core#Concept> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/adms/publishertype/RegionalAuthority> <http://www.w3.org/2004/02/skos/core#inScheme> <http://purl.org/adms/publishertype/1.0> .
+<http://purl.org/adms/publishertype/RegionalAuthority> <http://www.w3.org/2004/02/skos/core#prefLabel> "Regional authority"@en .
+<http://purl.org/adms/publishertype/RegionalAuthority> <http://www.w3.org/2004/02/skos/core#notation> "RegionalAuthority" .
+<http://purl.org/adms/publishertype/RegionalAuthority> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
+<http://purl.org/adms/publishertype/RegionalAuthority> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://purl.org/adms/publishertype/StandardisationBody> <http://www.w3.org/2004/02/skos/core#inScheme> <http://purl.org/adms/publishertype/1.0> .
+<http://purl.org/adms/publishertype/StandardisationBody> <http://www.w3.org/2004/02/skos/core#notation> "StandardisationBody" .
+<http://purl.org/adms/publishertype/StandardisationBody> <http://www.w3.org/2004/02/skos/core#prefLabel> "Standardisation body"@en .
+<http://purl.org/adms/publishertype/StandardisationBody> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
+<http://purl.org/adms/publishertype/StandardisationBody> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://purl.org/adms/representationtechnique/CommonLogic> <http://www.w3.org/2004/02/skos/core#inScheme> <http://purl.org/adms/representationtechnique/1.0> .
+<http://purl.org/adms/representationtechnique/CommonLogic> <http://www.w3.org/2004/02/skos/core#prefLabel> "Common logic"@en .
+<http://purl.org/adms/representationtechnique/CommonLogic> <http://www.w3.org/2004/02/skos/core#notation> "CommonLogic" .
+<http://purl.org/adms/representationtechnique/CommonLogic> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
+<http://purl.org/adms/representationtechnique/CommonLogic> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://purl.org/adms/licencetype/PublicDomain> <http://www.w3.org/2004/02/skos/core#inScheme> <http://purl.org/adms/licencetype/1.0> .
+<http://purl.org/adms/licencetype/PublicDomain> <http://www.w3.org/2004/02/skos/core#notation> "PublicDomain" .
+<http://purl.org/adms/licencetype/PublicDomain> <http://www.w3.org/2004/02/skos/core#prefLabel> "Public domain"@en .
+<http://purl.org/adms/licencetype/PublicDomain> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
+<http://purl.org/adms/licencetype/PublicDomain> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://purl.org/adms/licencetype/1.0> <http://www.w3.org/2004/02/skos/core#hasTopConcept> <http://purl.org/adms/licencetype/NonCommercialUseOnly> .
+<http://purl.org/adms/licencetype/1.0> <http://www.w3.org/2004/02/skos/core#hasTopConcept> <http://purl.org/adms/licencetype/KnownPatentEncumbrance> .
+<http://purl.org/adms/licencetype/1.0> <http://www.w3.org/2004/02/skos/core#hasTopConcept> <http://purl.org/adms/licencetype/NominalCost> .
+<http://purl.org/adms/licencetype/1.0> <http://www.w3.org/2004/02/skos/core#hasTopConcept> <http://purl.org/adms/licencetype/JurisdictionWithinTheEU> .
+<http://purl.org/adms/licencetype/1.0> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#ConceptScheme> .
+<http://purl.org/adms/licencetype/1.0> <http://www.w3.org/2004/02/skos/core#hasTopConcept> <http://purl.org/adms/licencetype/PublicDomain> .
+<http://purl.org/adms/licencetype/1.0> <http://www.w3.org/2000/01/rdf-schema#label> "Licence Type"@en .
+<http://purl.org/adms/licencetype/1.0> <http://www.w3.org/2004/02/skos/core#hasTopConcept> <http://purl.org/adms/licencetype/ReservedNames-Endorsement-OfficialStatus> .
+<http://purl.org/adms/licencetype/1.0> <http://www.w3.org/2004/02/skos/core#hasTopConcept> <http://purl.org/adms/licencetype/ViralEffect-ShareAlike> .
+<http://purl.org/adms/licencetype/1.0> <http://www.w3.org/2004/02/skos/core#hasTopConcept> <http://purl.org/adms/licencetype/GrantBack> .
+<http://purl.org/adms/licencetype/1.0> <http://www.w3.org/2004/02/skos/core#hasTopConcept> <http://purl.org/adms/licencetype/OtherRestrictiveClauses> .
+<http://purl.org/adms/licencetype/1.0> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://purl.org/adms/licencetype/1.0> <http://www.w3.org/2004/02/skos/core#hasTopConcept> <http://purl.org/adms/licencetype/Attribution> .
+<http://purl.org/adms/licencetype/1.0> <http://www.w3.org/2004/02/skos/core#hasTopConcept> <http://purl.org/adms/licencetype/RoyaltiesRequired> .
+<http://purl.org/adms/licencetype/1.0> <http://www.w3.org/2004/02/skos/core#hasTopConcept> <http://purl.org/adms/licencetype/UnknownIPR> .
+<http://purl.org/adms/licencetype/1.0> <http://www.w3.org/2004/02/skos/core#hasTopConcept> <http://purl.org/adms/licencetype/NoDerivativeWork> .
+<http://purl.org/adms/status/1.0> <http://www.w3.org/2004/02/skos/core#hasTopConcept> <http://purl.org/adms/status/Withdrawn> .
+<http://purl.org/adms/status/1.0> <http://www.w3.org/2004/02/skos/core#hasTopConcept> <http://purl.org/adms/status/UnderDevelopment> .
+<http://purl.org/adms/status/1.0> <http://www.w3.org/2004/02/skos/core#hasTopConcept> <http://purl.org/adms/status/Deprecated> .
+<http://purl.org/adms/status/1.0> <http://www.w3.org/2004/02/skos/core#hasTopConcept> <http://purl.org/adms/status/Completed> .
+<http://purl.org/adms/status/1.0> <http://www.w3.org/2000/01/rdf-schema#label> "Status"@en .
+<http://purl.org/adms/status/1.0> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#ConceptScheme> .
+<http://purl.org/adms/status/1.0> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://purl.org/adms/publishertype/NonGovernmentalOrganisation> <http://www.w3.org/2004/02/skos/core#inScheme> <http://purl.org/adms/publishertype/1.0> .
+<http://purl.org/adms/publishertype/NonGovernmentalOrganisation> <http://www.w3.org/2004/02/skos/core#notation> "NonGovernmentalOrganisation" .
+<http://purl.org/adms/publishertype/NonGovernmentalOrganisation> <http://www.w3.org/2004/02/skos/core#prefLabel> "Non-Governmental Organisation"@en .
+<http://purl.org/adms/publishertype/NonGovernmentalOrganisation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
+<http://purl.org/adms/publishertype/NonGovernmentalOrganisation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://purl.org/adms/assettype/Taxonomy> <http://www.w3.org/2004/02/skos/core#inScheme> <http://purl.org/adms/assettype/1.0> .
+<http://purl.org/adms/assettype/Taxonomy> <http://www.w3.org/2004/02/skos/core#definition> "scheme of categories and subcategories that can be used to sort and otherwise organize items of knowledge or information [ISO/DIS 25964-2]. "@en .
+<http://purl.org/adms/assettype/Taxonomy> <http://www.w3.org/2004/02/skos/core#prefLabel> "Taxonomy"@en .
+<http://purl.org/adms/assettype/Taxonomy> <http://www.w3.org/2004/02/skos/core#notation> "Taxonomy" .
+<http://purl.org/adms/assettype/Taxonomy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
+<http://purl.org/adms/assettype/Taxonomy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://purl.org/adms/licencetype/Attribution> <http://www.w3.org/2004/02/skos/core#inScheme> <http://purl.org/adms/licencetype/1.0> .
+<http://purl.org/adms/licencetype/Attribution> <http://www.w3.org/2004/02/skos/core#prefLabel> "Attribution"@en .
+<http://purl.org/adms/licencetype/Attribution> <http://www.w3.org/2004/02/skos/core#notation> "Attribution" .
+<http://purl.org/adms/licencetype/Attribution> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
+<http://purl.org/adms/licencetype/Attribution> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://purl.org/adms/assettype/NameAuthorityList> <http://www.w3.org/2004/02/skos/core#inScheme> <http://purl.org/adms/assettype/1.0> .
+<http://purl.org/adms/assettype/NameAuthorityList> <http://www.w3.org/2004/02/skos/core#definition> "controlled vocabulary for use in naming particular entities consistently [ISO/DIS 25964-2]."@en .
+<http://purl.org/adms/assettype/NameAuthorityList> <http://www.w3.org/2004/02/skos/core#prefLabel> "Name Authority List"@en .
+<http://purl.org/adms/assettype/NameAuthorityList> <http://www.w3.org/2004/02/skos/core#notation> "NameAuthorityList" .
+<http://purl.org/adms/assettype/NameAuthorityList> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
+<http://purl.org/adms/assettype/NameAuthorityList> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://purl.org/adms/assettype/Ontology> <http://www.w3.org/2004/02/skos/core#inScheme> <http://purl.org/adms/assettype/1.0> .
+<http://purl.org/adms/assettype/Ontology> <http://www.w3.org/2004/02/skos/core#prefLabel> "Ontology"@en .
+<http://purl.org/adms/assettype/Ontology> <http://www.w3.org/2004/02/skos/core#notation> "Ontology" .
+<http://purl.org/adms/assettype/Ontology> <http://www.w3.org/2004/02/skos/core#definition> "A formal, explicit specification of a shared conceptualization [ISO/DIS 25964-2]."@en .
+<http://purl.org/adms/assettype/Ontology> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
+<http://purl.org/adms/assettype/Ontology> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://purl.org/adms/licencetype/NominalCost> <http://www.w3.org/2004/02/skos/core#inScheme> <http://purl.org/adms/licencetype/1.0> .
+<http://purl.org/adms/licencetype/NominalCost> <http://www.w3.org/2004/02/skos/core#notation> "NominalCost" .
+<http://purl.org/adms/licencetype/NominalCost> <http://www.w3.org/2004/02/skos/core#prefLabel> "Nominal cost"@en .
+<http://purl.org/adms/licencetype/NominalCost> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
+<http://purl.org/adms/licencetype/NominalCost> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://purl.org/adms/representationtechnique/BPMN> <http://www.w3.org/2004/02/skos/core#inScheme> <http://purl.org/adms/representationtechnique/1.0> .
+<http://purl.org/adms/representationtechnique/BPMN> <http://www.w3.org/2004/02/skos/core#prefLabel> "Business Process Modeling Notation"@en .
+<http://purl.org/adms/representationtechnique/BPMN> <http://www.w3.org/2004/02/skos/core#notation> "BPMN" .
+<http://purl.org/adms/representationtechnique/BPMN> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
+<http://purl.org/adms/representationtechnique/BPMN> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://purl.org/adms/assettype/CoreComponent> <http://www.w3.org/2004/02/skos/core#inScheme> <http://purl.org/adms/assettype/1.0> .
+<http://purl.org/adms/assettype/CoreComponent> <http://www.w3.org/2004/02/skos/core#definition> "A core component is a context-free semantic building block for creating clear and meaningful data models, vocabularies, and information exchange packages [UN/CEFACT CCTS ]."@en .
+<http://purl.org/adms/assettype/CoreComponent> <http://www.w3.org/2004/02/skos/core#notation> "CoreComponent" .
+<http://purl.org/adms/assettype/CoreComponent> <http://www.w3.org/2004/02/skos/core#prefLabel> "Core Component"@en .
+<http://purl.org/adms/assettype/CoreComponent> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
+<http://purl.org/adms/assettype/CoreComponent> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://purl.org/adms/representationtechnique/XMLSchema> <http://www.w3.org/2004/02/skos/core#inScheme> <http://purl.org/adms/representationtechnique/1.0> .
+<http://purl.org/adms/representationtechnique/XMLSchema> <http://www.w3.org/2004/02/skos/core#prefLabel> "XML Schema"@en .
+<http://purl.org/adms/representationtechnique/XMLSchema> <http://www.w3.org/2004/02/skos/core#notation> "XMLSchema" .
+<http://purl.org/adms/representationtechnique/XMLSchema> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
+<http://purl.org/adms/representationtechnique/XMLSchema> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://purl.org/adms/interoperabilitylevel/Political> <http://www.w3.org/2004/02/skos/core#inScheme> <http://purl.org/adms/interoperabilitylevel/1.0> .
+<http://purl.org/adms/interoperabilitylevel/Political> <http://www.w3.org/2004/02/skos/core#prefLabel> "Political"@en .
+<http://purl.org/adms/interoperabilitylevel/Political> <http://www.w3.org/2004/02/skos/core#notation> "Political" .
+<http://purl.org/adms/interoperabilitylevel/Political> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
+<http://purl.org/adms/interoperabilitylevel/Political> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://purl.org/adms/publishertype/IndustryConsortium> <http://www.w3.org/2004/02/skos/core#inScheme> <http://purl.org/adms/publishertype/1.0> .
+<http://purl.org/adms/publishertype/IndustryConsortium> <http://www.w3.org/2004/02/skos/core#notation> "IndustryConsortium" .
+<http://purl.org/adms/publishertype/IndustryConsortium> <http://www.w3.org/2004/02/skos/core#prefLabel> "Industry consortium"@en .
+<http://purl.org/adms/publishertype/IndustryConsortium> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
+<http://purl.org/adms/publishertype/IndustryConsortium> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://purl.org/adms/assettype/Thesaurus> <http://www.w3.org/2004/02/skos/core#inScheme> <http://purl.org/adms/assettype/1.0> .
+<http://purl.org/adms/assettype/Thesaurus> <http://www.w3.org/2004/02/skos/core#definition> "controlled and structured vocabulary in which concepts are represented by terms, organized so that relationships between concepts are made explicit, and preferred terms are accompanied by lead-in entries for synonyms or quasi-synonyms  [ISO 25964-1:2011]."@en .
+<http://purl.org/adms/assettype/Thesaurus> <http://www.w3.org/2004/02/skos/core#prefLabel> "Thesaurus"@en .
+<http://purl.org/adms/assettype/Thesaurus> <http://www.w3.org/2004/02/skos/core#notation> "Thesaurus" .
+<http://purl.org/adms/assettype/Thesaurus> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
+<http://purl.org/adms/assettype/Thesaurus> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://purl.org/adms/licencetype/ViralEffect-ShareAlike> <http://www.w3.org/2004/02/skos/core#inScheme> <http://purl.org/adms/licencetype/1.0> .
+<http://purl.org/adms/licencetype/ViralEffect-ShareAlike> <http://www.w3.org/2004/02/skos/core#notation> "ViralEffect-ShareAlike" .
+<http://purl.org/adms/licencetype/ViralEffect-ShareAlike> <http://www.w3.org/2004/02/skos/core#prefLabel> "Viral effect (a.k.a. Share-alike)"@en .
+<http://purl.org/adms/licencetype/ViralEffect-ShareAlike> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
+<http://purl.org/adms/licencetype/ViralEffect-ShareAlike> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://purl.org/adms/licencetype/OtherRestrictiveClauses> <http://www.w3.org/2004/02/skos/core#inScheme> <http://purl.org/adms/licencetype/1.0> .
+<http://purl.org/adms/licencetype/OtherRestrictiveClauses> <http://www.w3.org/2004/02/skos/core#prefLabel> "Other restrictive clauses"@en .
+<http://purl.org/adms/licencetype/OtherRestrictiveClauses> <http://www.w3.org/2004/02/skos/core#notation> "OtherRestrictiveClauses" .
+<http://purl.org/adms/licencetype/OtherRestrictiveClauses> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
+<http://purl.org/adms/licencetype/OtherRestrictiveClauses> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://purl.org/adms/assettype/CodeList> <http://www.w3.org/2004/02/skos/core#inScheme> <http://purl.org/adms/assettype/1.0> .
+<http://purl.org/adms/assettype/CodeList> <http://www.w3.org/2004/02/skos/core#definition> "Complete set of data element values of a coded simple data element  [ISO 9735-1:2002, 4.14]."@en .
+<http://purl.org/adms/assettype/CodeList> <http://www.w3.org/2004/02/skos/core#prefLabel> "Code List"@en .
+<http://purl.org/adms/assettype/CodeList> <http://www.w3.org/2004/02/skos/core#notation> "CodeList" .
+<http://purl.org/adms/assettype/CodeList> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
+<http://purl.org/adms/assettype/CodeList> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://www.w3.org/2004/02/skos/core#inScheme> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+<http://purl.org/adms/status/Withdrawn> <http://www.w3.org/2004/02/skos/core#inScheme> <http://purl.org/adms/status/1.0> .
+<http://purl.org/adms/status/Withdrawn> <http://www.w3.org/2004/02/skos/core#prefLabel> "Withdrawn"@en .
+<http://purl.org/adms/status/Withdrawn> <http://www.w3.org/2004/02/skos/core#notation> "Withdrawn" .
+<http://purl.org/adms/status/Withdrawn> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
+<http://purl.org/adms/status/Withdrawn> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://purl.org/adms/representationtechnique/SBVR> <http://www.w3.org/2004/02/skos/core#inScheme> <http://purl.org/adms/representationtechnique/1.0> .
+<http://purl.org/adms/representationtechnique/SBVR> <http://www.w3.org/2004/02/skos/core#prefLabel> "Semantics of Business Vocabulary and Rules"@en .
+<http://purl.org/adms/representationtechnique/SBVR> <http://www.w3.org/2004/02/skos/core#notation> "SBVR" .
+<http://purl.org/adms/representationtechnique/SBVR> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
+<http://purl.org/adms/representationtechnique/SBVR> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://purl.org/adms/representationtechnique/OWL> <http://www.w3.org/2004/02/skos/core#inScheme> <http://purl.org/adms/representationtechnique/1.0> .
+<http://purl.org/adms/representationtechnique/OWL> <http://www.w3.org/2004/02/skos/core#prefLabel> "Web Ontology Language Full/DL/Lite"@en .
+<http://purl.org/adms/representationtechnique/OWL> <http://www.w3.org/2004/02/skos/core#notation> "OWL" .
+<http://purl.org/adms/representationtechnique/OWL> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
+<http://purl.org/adms/representationtechnique/OWL> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://purl.org/adms/licencetype/RoyaltiesRequired> <http://www.w3.org/2004/02/skos/core#inScheme> <http://purl.org/adms/licencetype/1.0> .
+<http://purl.org/adms/licencetype/RoyaltiesRequired> <http://www.w3.org/2004/02/skos/core#notation> "RoyaltiesRequired" .
+<http://purl.org/adms/licencetype/RoyaltiesRequired> <http://www.w3.org/2004/02/skos/core#prefLabel> "Royalties required"@en .
+<http://purl.org/adms/licencetype/RoyaltiesRequired> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
+<http://purl.org/adms/licencetype/RoyaltiesRequired> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://www.w3.org/2004/02/skos/core#prefLabel> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+<http://purl.org/adms/status/Deprecated> <http://www.w3.org/2004/02/skos/core#inScheme> <http://purl.org/adms/status/1.0> .
+<http://purl.org/adms/status/Deprecated> <http://www.w3.org/2004/02/skos/core#prefLabel> "Deprecated"@en .
+<http://purl.org/adms/status/Deprecated> <http://www.w3.org/2004/02/skos/core#notation> "Deprecated" .
+<http://purl.org/adms/status/Deprecated> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
+<http://purl.org/adms/status/Deprecated> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://purl.org/adms/publishertype/Company> <http://www.w3.org/2004/02/skos/core#inScheme> <http://purl.org/adms/publishertype/1.0> .
+<http://purl.org/adms/publishertype/Company> <http://www.w3.org/2004/02/skos/core#prefLabel> "Company"@en .
+<http://purl.org/adms/publishertype/Company> <http://www.w3.org/2004/02/skos/core#notation> "Company" .
+<http://purl.org/adms/publishertype/Company> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
+<http://purl.org/adms/publishertype/Company> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://purl.org/adms/representationtechnique/Archimate> <http://www.w3.org/2004/02/skos/core#inScheme> <http://purl.org/adms/representationtechnique/1.0> .
+<http://purl.org/adms/representationtechnique/Archimate> <http://www.w3.org/2004/02/skos/core#prefLabel> "Archimate"@en .
+<http://purl.org/adms/representationtechnique/Archimate> <http://www.w3.org/2004/02/skos/core#notation> "Archimate" .
+<http://purl.org/adms/representationtechnique/Archimate> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
+<http://purl.org/adms/representationtechnique/Archimate> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://www.w3.org/2004/02/skos/core#notation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+<http://purl.org/adms/representationtechnique/SPIN> <http://www.w3.org/2004/02/skos/core#inScheme> <http://purl.org/adms/representationtechnique/1.0> .
+<http://purl.org/adms/representationtechnique/SPIN> <http://www.w3.org/2004/02/skos/core#notation> "SPIN" .
+<http://purl.org/adms/representationtechnique/SPIN> <http://www.w3.org/2004/02/skos/core#prefLabel> "SPARQL Inference Notation"@en .
+<http://purl.org/adms/representationtechnique/SPIN> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
+<http://purl.org/adms/representationtechnique/SPIN> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://purl.org/adms/licencetype/JurisdictionWithinTheEU> <http://www.w3.org/2004/02/skos/core#inScheme> <http://purl.org/adms/licencetype/1.0> .
+<http://purl.org/adms/licencetype/JurisdictionWithinTheEU> <http://www.w3.org/2004/02/skos/core#notation> "JurisdictionWithinTheEU" .
+<http://purl.org/adms/licencetype/JurisdictionWithinTheEU> <http://www.w3.org/2004/02/skos/core#prefLabel> "Jurisdiction within the EU"@en .
+<http://purl.org/adms/licencetype/JurisdictionWithinTheEU> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
+<http://purl.org/adms/licencetype/JurisdictionWithinTheEU> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://purl.org/adms/interoperabilitylevel/1.0> <http://www.w3.org/2004/02/skos/core#hasTopConcept> <http://purl.org/adms/interoperabilitylevel/Technical> .
+<http://purl.org/adms/interoperabilitylevel/1.0> <http://www.w3.org/2004/02/skos/core#hasTopConcept> <http://purl.org/adms/interoperabilitylevel/Semantic> .
+<http://purl.org/adms/interoperabilitylevel/1.0> <http://www.w3.org/2004/02/skos/core#hasTopConcept> <http://purl.org/adms/interoperabilitylevel/Political> .
+<http://purl.org/adms/interoperabilitylevel/1.0> <http://www.w3.org/2004/02/skos/core#hasTopConcept> <http://purl.org/adms/interoperabilitylevel/Organisational> .
+<http://purl.org/adms/interoperabilitylevel/1.0> <http://www.w3.org/2004/02/skos/core#hasTopConcept> <http://purl.org/adms/interoperabilitylevel/Legal> .
+<http://purl.org/adms/interoperabilitylevel/1.0> <http://www.w3.org/2000/01/rdf-schema#label> "Interoperability Level"@en .
+<http://purl.org/adms/interoperabilitylevel/1.0> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#ConceptScheme> .
+<http://purl.org/adms/interoperabilitylevel/1.0> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://purl.org/adms/representationtechnique/SWRL> <http://www.w3.org/2004/02/skos/core#inScheme> <http://purl.org/adms/representationtechnique/1.0> .
+<http://purl.org/adms/representationtechnique/SWRL> <http://www.w3.org/2004/02/skos/core#prefLabel> "Semantic Web Rule Language"@en .
+<http://purl.org/adms/representationtechnique/SWRL> <http://www.w3.org/2004/02/skos/core#notation> "SWRL" .
+<http://purl.org/adms/representationtechnique/SWRL> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
+<http://purl.org/adms/representationtechnique/SWRL> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://purl.org/adms/assettype/ServiceDescription> <http://www.w3.org/2004/02/skos/core#inScheme> <http://purl.org/adms/assettype/1.0> .
+<http://purl.org/adms/assettype/ServiceDescription> <http://www.w3.org/2004/02/skos/core#notation> "ServiceDescription" .
+<http://purl.org/adms/assettype/ServiceDescription> <http://www.w3.org/2004/02/skos/core#prefLabel> "Service Description"@en .
+<http://purl.org/adms/assettype/ServiceDescription> <http://www.w3.org/2004/02/skos/core#definition> "A service description is a set of documents that describe the interface to and semantics of a service [W3C WS-GLOSS ]."@en .
+<http://purl.org/adms/assettype/ServiceDescription> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
+<http://purl.org/adms/assettype/ServiceDescription> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://purl.org/adms/publishertype/SupraNationalAuthority> <http://www.w3.org/2004/02/skos/core#inScheme> <http://purl.org/adms/publishertype/1.0> .
+<http://purl.org/adms/publishertype/SupraNationalAuthority> <http://www.w3.org/2004/02/skos/core#notation> "SupraNationalAuthority" .
+<http://purl.org/adms/publishertype/SupraNationalAuthority> <http://www.w3.org/2004/02/skos/core#prefLabel> "Supra-national authority"@en .
+<http://purl.org/adms/publishertype/SupraNationalAuthority> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
+<http://purl.org/adms/publishertype/SupraNationalAuthority> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://purl.org/adms/representationtechnique/Datalog> <http://www.w3.org/2004/02/skos/core#inScheme> <http://purl.org/adms/representationtechnique/1.0> .
+<http://purl.org/adms/representationtechnique/Datalog> <http://www.w3.org/2004/02/skos/core#prefLabel> "Datalog"@en .
+<http://purl.org/adms/representationtechnique/Datalog> <http://www.w3.org/2004/02/skos/core#notation> "Datalog" .
+<http://purl.org/adms/representationtechnique/Datalog> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
+<http://purl.org/adms/representationtechnique/Datalog> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://purl.org/adms/representationtechnique/WSDL> <http://www.w3.org/2004/02/skos/core#inScheme> <http://purl.org/adms/representationtechnique/1.0> .
+<http://purl.org/adms/representationtechnique/WSDL> <http://www.w3.org/2004/02/skos/core#prefLabel> "Web Service Description Language"@en .
+<http://purl.org/adms/representationtechnique/WSDL> <http://www.w3.org/2004/02/skos/core#notation> "WSDL" .
+<http://purl.org/adms/representationtechnique/WSDL> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
+<http://purl.org/adms/representationtechnique/WSDL> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://purl.org/adms/licencetype/KnownPatentEncumbrance> <http://www.w3.org/2004/02/skos/core#inScheme> <http://purl.org/adms/licencetype/1.0> .
+<http://purl.org/adms/licencetype/KnownPatentEncumbrance> <http://www.w3.org/2004/02/skos/core#prefLabel> "Known patent encumbrance"@en .
+<http://purl.org/adms/licencetype/KnownPatentEncumbrance> <http://www.w3.org/2004/02/skos/core#notation> "KnownPatentEncumbrance" .
+<http://purl.org/adms/licencetype/KnownPatentEncumbrance> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
+<http://purl.org/adms/licencetype/KnownPatentEncumbrance> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://purl.org/adms/representationtechnique/DTD> <http://www.w3.org/2004/02/skos/core#inScheme> <http://purl.org/adms/representationtechnique/1.0> .
+<http://purl.org/adms/representationtechnique/DTD> <http://www.w3.org/2004/02/skos/core#prefLabel> "Document Type Definition"@en .
+<http://purl.org/adms/representationtechnique/DTD> <http://www.w3.org/2004/02/skos/core#notation> "DTD" .
+<http://purl.org/adms/representationtechnique/DTD> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
+<http://purl.org/adms/representationtechnique/DTD> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://purl.org/adms/licencetype/ReservedNames-Endorsement-OfficialStatus> <http://www.w3.org/2004/02/skos/core#inScheme> <http://purl.org/adms/licencetype/1.0> .
+<http://purl.org/adms/licencetype/ReservedNames-Endorsement-OfficialStatus> <http://www.w3.org/2004/02/skos/core#prefLabel> "Reserved names / endorsement / official status"@en .
+<http://purl.org/adms/licencetype/ReservedNames-Endorsement-OfficialStatus> <http://www.w3.org/2004/02/skos/core#notation> "ReservedNames-Endorsement-OfficialStatus" .
+<http://purl.org/adms/licencetype/ReservedNames-Endorsement-OfficialStatus> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
+<http://purl.org/adms/licencetype/ReservedNames-Endorsement-OfficialStatus> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://purl.org/adms/interoperabilitylevel/Semantic> <http://www.w3.org/2004/02/skos/core#inScheme> <http://purl.org/adms/interoperabilitylevel/1.0> .
+<http://purl.org/adms/interoperabilitylevel/Semantic> <http://www.w3.org/2004/02/skos/core#prefLabel> "Semantic"@en .
+<http://purl.org/adms/interoperabilitylevel/Semantic> <http://www.w3.org/2004/02/skos/core#notation> "Semantic" .
+<http://purl.org/adms/interoperabilitylevel/Semantic> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
+<http://purl.org/adms/interoperabilitylevel/Semantic> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://www.w3.org/2004/02/skos/core#hasTopConcept> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+<http://purl.org/adms/publishertype/Academia-ScientificOrganisation> <http://www.w3.org/2004/02/skos/core#inScheme> <http://purl.org/adms/publishertype/1.0> .
+<http://purl.org/adms/publishertype/Academia-ScientificOrganisation> <http://www.w3.org/2004/02/skos/core#prefLabel> "Academia/Scientific organisation"@en .
+<http://purl.org/adms/publishertype/Academia-ScientificOrganisation> <http://www.w3.org/2004/02/skos/core#notation> "Academia-ScientificOrganisation" .
+<http://purl.org/adms/publishertype/Academia-ScientificOrganisation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
+<http://purl.org/adms/publishertype/Academia-ScientificOrganisation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://purl.org/adms/representationtechnique/Diagram> <http://www.w3.org/2004/02/skos/core#inScheme> <http://purl.org/adms/representationtechnique/1.0> .
+<http://purl.org/adms/representationtechnique/Diagram> <http://www.w3.org/2004/02/skos/core#prefLabel> "Diagram"@en .
+<http://purl.org/adms/representationtechnique/Diagram> <http://www.w3.org/2004/02/skos/core#notation> "Diagram" .
+<http://purl.org/adms/representationtechnique/Diagram> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
+<http://purl.org/adms/representationtechnique/Diagram> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://purl.org/adms/publishertype/NonProfitOrganisation> <http://www.w3.org/2004/02/skos/core#inScheme> <http://purl.org/adms/publishertype/1.0> .
+<http://purl.org/adms/publishertype/NonProfitOrganisation> <http://www.w3.org/2004/02/skos/core#notation> "NonProfitOrganisation" .
+<http://purl.org/adms/publishertype/NonProfitOrganisation> <http://www.w3.org/2004/02/skos/core#prefLabel> "Non-Profit Organisation"@en .
+<http://purl.org/adms/publishertype/NonProfitOrganisation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
+<http://purl.org/adms/publishertype/NonProfitOrganisation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://purl.org/adms/representationtechnique/RIF> <http://www.w3.org/2004/02/skos/core#inScheme> <http://purl.org/adms/representationtechnique/1.0> .
+<http://purl.org/adms/representationtechnique/RIF> <http://www.w3.org/2004/02/skos/core#prefLabel> "Rule Interchange Format"@en .
+<http://purl.org/adms/representationtechnique/RIF> <http://www.w3.org/2004/02/skos/core#notation> "RIF" .
+<http://purl.org/adms/representationtechnique/RIF> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
+<http://purl.org/adms/representationtechnique/RIF> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://purl.org/adms/publishertype/NationalAuthority> <http://www.w3.org/2004/02/skos/core#inScheme> <http://purl.org/adms/publishertype/1.0> .
+<http://purl.org/adms/publishertype/NationalAuthority> <http://www.w3.org/2004/02/skos/core#notation> "NationalAuthority" .
+<http://purl.org/adms/publishertype/NationalAuthority> <http://www.w3.org/2004/02/skos/core#prefLabel> "National authority"@en .
+<http://purl.org/adms/publishertype/NationalAuthority> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
+<http://purl.org/adms/publishertype/NationalAuthority> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://purl.org/adms/interoperabilitylevel/Legal> <http://www.w3.org/2004/02/skos/core#inScheme> <http://purl.org/adms/interoperabilitylevel/1.0> .
+<http://purl.org/adms/interoperabilitylevel/Legal> <http://www.w3.org/2004/02/skos/core#prefLabel> "Legal"@en .
+<http://purl.org/adms/interoperabilitylevel/Legal> <http://www.w3.org/2004/02/skos/core#notation> "Legal" .
+<http://purl.org/adms/interoperabilitylevel/Legal> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
+<http://purl.org/adms/interoperabilitylevel/Legal> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://purl.org/adms/publishertype/LocalAuthority> <http://www.w3.org/2004/02/skos/core#inScheme> <http://purl.org/adms/publishertype/1.0> .
+<http://purl.org/adms/publishertype/LocalAuthority> <http://www.w3.org/2004/02/skos/core#prefLabel> "Local Authority"@en .
+<http://purl.org/adms/publishertype/LocalAuthority> <http://www.w3.org/2004/02/skos/core#notation> "LocalAuthority" .
+<http://purl.org/adms/publishertype/LocalAuthority> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
+<http://purl.org/adms/publishertype/LocalAuthority> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://purl.org/adms/representationtechnique/UML> <http://www.w3.org/2004/02/skos/core#inScheme> <http://purl.org/adms/representationtechnique/1.0> .
+<http://purl.org/adms/representationtechnique/UML> <http://www.w3.org/2004/02/skos/core#prefLabel> "Unified Modelling Language"@en .
+<http://purl.org/adms/representationtechnique/UML> <http://www.w3.org/2004/02/skos/core#notation> "UML" .
+<http://purl.org/adms/representationtechnique/UML> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
+<http://purl.org/adms/representationtechnique/UML> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://purl.org/adms/publishertype/1.0> <http://www.w3.org/2004/02/skos/core#hasTopConcept> <http://purl.org/adms/publishertype/SupraNationalAuthority> .
+<http://purl.org/adms/publishertype/1.0> <http://www.w3.org/2004/02/skos/core#hasTopConcept> <http://purl.org/adms/publishertype/StandardisationBody> .
+<http://purl.org/adms/publishertype/1.0> <http://www.w3.org/2004/02/skos/core#hasTopConcept> <http://purl.org/adms/publishertype/Company> .
+<http://purl.org/adms/publishertype/1.0> <http://www.w3.org/2004/02/skos/core#hasTopConcept> <http://purl.org/adms/publishertype/Academia-ScientificOrganisation> .
+<http://purl.org/adms/publishertype/1.0> <http://www.w3.org/2004/02/skos/core#hasTopConcept> <http://purl.org/adms/publishertype/IndustryConsortium> .
+<http://purl.org/adms/publishertype/1.0> <http://www.w3.org/2004/02/skos/core#hasTopConcept> <http://purl.org/adms/publishertype/PrivateIndividual(s)> .
+<http://purl.org/adms/publishertype/1.0> <http://www.w3.org/2004/02/skos/core#hasTopConcept> <http://purl.org/adms/publishertype/RegionalAuthority> .
+<http://purl.org/adms/publishertype/1.0> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#ConceptScheme> .
+<http://purl.org/adms/publishertype/1.0> <http://www.w3.org/2004/02/skos/core#hasTopConcept> <http://purl.org/adms/publishertype/NonGovernmentalOrganisation> .
+<http://purl.org/adms/publishertype/1.0> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://purl.org/adms/publishertype/1.0> <http://www.w3.org/2000/01/rdf-schema#label> "Publisher Type"@en .
+<http://purl.org/adms/publishertype/1.0> <http://www.w3.org/2004/02/skos/core#hasTopConcept> <http://purl.org/adms/publishertype/LocalAuthority> .
+<http://purl.org/adms/publishertype/1.0> <http://www.w3.org/2004/02/skos/core#hasTopConcept> <http://purl.org/adms/publishertype/NonProfitOrganisation> .
+<http://purl.org/adms/publishertype/1.0> <http://www.w3.org/2004/02/skos/core#hasTopConcept> <http://purl.org/adms/publishertype/NationalAuthority> .
+<http://purl.org/adms/interoperabilitylevel/Organisational> <http://www.w3.org/2004/02/skos/core#inScheme> <http://purl.org/adms/interoperabilitylevel/1.0> .
+<http://purl.org/adms/interoperabilitylevel/Organisational> <http://www.w3.org/2004/02/skos/core#prefLabel> "Organisational"@en .
+<http://purl.org/adms/interoperabilitylevel/Organisational> <http://www.w3.org/2004/02/skos/core#notation> "Organisational" .
+<http://purl.org/adms/interoperabilitylevel/Organisational> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
+<http://purl.org/adms/interoperabilitylevel/Organisational> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://purl.org/adms/assettype/SyntaxEncodingScheme> <http://www.w3.org/2004/02/skos/core#inScheme> <http://purl.org/adms/assettype/1.0> .
+<http://purl.org/adms/assettype/SyntaxEncodingScheme> <http://www.w3.org/2004/02/skos/core#definition> "Syntax Encoding Schemes indicate that the value is a string formatted in accordance with a formal notation, such as \"2000-01-01\" as the standard expression of a date. [DCMI Glossary]."@en .
+<http://purl.org/adms/assettype/SyntaxEncodingScheme> <http://www.w3.org/2004/02/skos/core#notation> "SyntaxEncodingScheme" .
+<http://purl.org/adms/assettype/SyntaxEncodingScheme> <http://www.w3.org/2004/02/skos/core#prefLabel> "Syntax Encoding Scheme"@en .
+<http://purl.org/adms/assettype/SyntaxEncodingScheme> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
+<http://purl.org/adms/assettype/SyntaxEncodingScheme> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://purl.org/adms/licencetype/GrantBack> <http://www.w3.org/2004/02/skos/core#inScheme> <http://purl.org/adms/licencetype/1.0> .
+<http://purl.org/adms/licencetype/GrantBack> <http://www.w3.org/2004/02/skos/core#prefLabel> "Grant back"@en .
+<http://purl.org/adms/licencetype/GrantBack> <http://www.w3.org/2004/02/skos/core#notation> "GrantBack" .
+<http://purl.org/adms/licencetype/GrantBack> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
+<http://purl.org/adms/licencetype/GrantBack> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://purl.org/adms/status/UnderDevelopment> <http://www.w3.org/2004/02/skos/core#inScheme> <http://purl.org/adms/status/1.0> .
+<http://purl.org/adms/status/UnderDevelopment> <http://www.w3.org/2004/02/skos/core#prefLabel> "Under development"@en .
+<http://purl.org/adms/status/UnderDevelopment> <http://www.w3.org/2004/02/skos/core#notation> "UnderDevelopment" .
+<http://purl.org/adms/status/UnderDevelopment> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
+<http://purl.org/adms/status/UnderDevelopment> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://purl.org/adms/publishertype/PrivateIndividual(s)> <http://www.w3.org/2004/02/skos/core#inScheme> <http://purl.org/adms/publishertype/1.0> .
+<http://purl.org/adms/publishertype/PrivateIndividual(s)> <http://www.w3.org/2004/02/skos/core#notation> "PrivateIndividual(s)" .
+<http://purl.org/adms/publishertype/PrivateIndividual(s)> <http://www.w3.org/2004/02/skos/core#prefLabel> "Private Individual(s)"@en .
+<http://purl.org/adms/publishertype/PrivateIndividual(s)> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
+<http://purl.org/adms/publishertype/PrivateIndividual(s)> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
